@@ -108,6 +108,7 @@ alias cdtmp='cd ~/tmp'
 alias cddrop='cd ~/Dropbox'
 alias cdarc='cd ~/Dropbox/Archives'
 
+### cd to the top level of git project ###
 function cdtop() {
     if git rev-parse --is-inside-work-tree > /dev/null 2&>1; then
         cd `git rev-parse --show-toplevel`
@@ -134,6 +135,10 @@ alias gcc='gcc -Werror -Wall'
 
 function frep {
     find . -type f -name $1 | xargs grep $2
+}
+
+function pdfgrep {
+    find . -name '*.pdf.txt' | xargs grep -i $1 2> /dev/null | sed -e 's/\.pdf\.txt/\.pdf/g'
 }
 
 REPORTTIME=3
@@ -177,5 +182,15 @@ case ${OSTYPE} in
         alias singled='xrandr --output VGA1 --off'
 
         export PATH=/usr/local/appengine-java-sdk/bin:$PATH
+
+        function jpkey {
+            setxkbmap -layout jp
+            xmodmap ~/.Xmodmap
+        }
+
+        function uskey {
+            setxkbmap -layout us
+            xmodmap ~/.Xmodmap
+        }
         ;;
 esac
