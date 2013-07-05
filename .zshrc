@@ -1,6 +1,6 @@
 fpath=("~/zsh-completions/src" $fpath)
 
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 autoload colors
@@ -157,42 +157,10 @@ compdef -d scp
 ### depend on OS ###
 case ${OSTYPE} in
     darwin*)
-        export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
-
-        if [ $SHLVL = 1 ]; then
-            tmux attach || tmux
-        fi
-
-        alias ls="ls -G -w"
-        alias emacs='/usr/local/bin/emacs'
-
-        export PATH=/usr/local/share/npm/bin:$PATH
-        export PATH=/opt/gnu/:$PATH
+        source .zshrc.mac
         ;;
 
     linux*)
-        export LESSOPEN='| /usr/bin/source-highlight-esc.sh %s'
-
-        if [ $SHLVL = 3 ]; then
-            tmux attach || tmux
-        fi
-
-        alias ls='ls --color=auto'
-        alias open="xdg-open"
-        alias eclipse='MALLOC_CHECK_=0 /usr/local/eclipse/eclipse'
-        alias duald='xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1'
-        alias singled='xrandr --output VGA1 --off'
-
-        export PATH=/usr/local/appengine-java-sdk/bin:$PATH
-
-        function jpkey {
-            setxkbmap -layout jp
-            xmodmap ~/.Xmodmap
-        }
-
-        function uskey {
-            setxkbmap -layout us
-            xmodmap ~/.Xmodmap
-        }
+        source .zshrc.linux
         ;;
 esac
