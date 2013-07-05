@@ -154,13 +154,4 @@ compdef -d rake
 compdef -d npm
 compdef -d scp
 
-### depend on OS ###
-case ${OSTYPE} in
-    darwin*)
-        source .zshrc.mac
-        ;;
-
-    linux*)
-        source .zshrc.linux
-        ;;
-esac
+[ -f .zshrc.`uname` ] && source .zshrc.`uname`
