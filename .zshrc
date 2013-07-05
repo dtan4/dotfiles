@@ -54,6 +54,9 @@ esac
 HISTFILE=${HOME}/.zsh_hisrory
 HISTSIZE=10000000
 SAVELIST=10000000
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
 setopt extended_history
 setopt share_history
 
@@ -64,6 +67,7 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
+bindkey "^[[Z" reverse-menu-complete  # reverse completion menu by Shift-Tab
 
 setopt auto_cd
 setopt auto_pushd
@@ -78,7 +82,6 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
 [[ $TERM = "eterm-color" ]] && TERM=xterm-color
-
 
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' verbose yes
@@ -102,7 +105,8 @@ export LESS='-R'
 bindkey "" backward-delete-char
 
 # reload .zshrc
-alias sourcez='source ~/.zshrc'
+# alias sourcez='source ~/.zshrc'
+alias reload='exec zsh -l'
 
 # extend cd
 alias cddown='cd ~/Downloads'
