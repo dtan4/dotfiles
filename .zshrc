@@ -158,4 +158,4 @@ compdef -d rake
 compdef -d npm
 compdef -d scp
 
-[ -f .zshrc.`uname` ] && source .zshrc.`uname`
+[ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
