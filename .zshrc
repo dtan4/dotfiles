@@ -116,6 +116,8 @@ alias cdtmp='cd ~/tmp'
 alias cddrop='cd ~/Dropbox'
 alias cdarc='cd ~/Dropbox/Archives'
 
+alias diff='colordiff'
+
 ### cd to the top level of git project ###
 function cdtop() {
     if git rev-parse --is-inside-work-tree > /dev/null 2&>1; then
