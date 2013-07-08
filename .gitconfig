@@ -1,0 +1,18 @@
+[user]
+	name = dtan4
+	email = dtanshi45@gmail.com
+[color]
+    ui = always
+    diff = true
+[alias]
+	co = checkout
+	gp = grep --color=auto -n
+	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+    df = diff
+    cdf = diff --cached
+    st = status
+    cm = commit -m
+    cam = commit --amend -m
+    ignore = !"f() { local s=$1; shift; \
+      while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
+      curl "http://gitignore.io/api/$s"; }; f"
