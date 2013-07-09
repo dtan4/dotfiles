@@ -8,4 +8,4 @@ alias ls="ls -G -w"
 alias emacs='/usr/local/bin/emacs'
 
 export PATH=/usr/local/share/npm/bin:$PATH
-export PATH=/opt/gnu/:$PATH
+export PATH=/opt/gnu:$PATH

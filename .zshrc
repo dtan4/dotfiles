@@ -155,7 +155,7 @@ REPORTTIME=3
 
 export PATH=$PATH:$HOME/local
 export PATH=~/.cabal/bin:$PATH
-export PATH=~/.rbenv/versions/2.0.0-p0/bin:~/.rbenv/bin:$PATH
+export PATH=~/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
 
 compdef -d rake
