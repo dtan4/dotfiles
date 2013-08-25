@@ -74,6 +74,7 @@ setopt auto_pushd
 setopt list_packed
 setopt nolistbeep
 setopt noautoremoveslash
+setopt nonomatch
 
 autoload predict-on
 # predict-on
