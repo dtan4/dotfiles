@@ -157,6 +157,7 @@ REPORTTIME=3
 export PATH=$PATH:$HOME/local
 export PATH=~/.cabal/bin:$PATH
 export PATH=~/.plenv/bin:$PATH
+export PATH=~/.plenv/shims:$PATH
 eval "$(plenv init -)"
 export PATH=~/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
