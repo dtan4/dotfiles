@@ -7,3 +7,4 @@ set showmode
 set title
 set tabstop=4
 set incsearch
+set hlsearch
