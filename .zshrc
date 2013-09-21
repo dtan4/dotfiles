@@ -165,5 +165,6 @@ eval "$(rbenv init -)"
 compdef -d rake
 compdef -d npm
 compdef -d scp
+compdef -d gem
 
 [ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
