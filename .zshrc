@@ -9,7 +9,7 @@ colors
 export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# http://yuroyoro.hatenablog.com/entry/20110219/1298089409
+# http://qiita.com/mollifier/items/8d5a627d773758dd8078
 function _git_not_pushed()
 {
     if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
