@@ -10,14 +10,26 @@ export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # http://qiita.com/mollifier/items/8d5a627d773758dd8078
-function _git_not_pushed()
-{
+function rprompt-git-not-pushed() {
+    local count
     if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
         return
     fi
     count=`git rev-list origin/master..master 2>/dev/null | wc -l | tr -d ' '`
     if [[ $count -ne 0 ]]; then
         echo "[%{${fg_bold[red]}%}${count}%{$reset_color%}]"
+    fi
+    return 0
+}
+
+function rprompt-git-stash() {
+    local count
+    if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
+        return
+    fi
+    count=`git stash list 2>/dev/null | wc -l | tr -d ' '`
+    if [[ $count -ne 0 ]]; then
+        echo "[%{${fg_bold[yellow]}%}${count}%{$reset_color%}]"
     fi
     return 0
 }
@@ -50,7 +62,7 @@ setopt prompt_subst
 PROMPT="%{${fg[magenta]}%}%n@%m ${fg[yellow]}%}%(5~,%-2~/.../%2~,%~)%{${reset_color}%} [%D{%Y-%m-%d %T}]
 %(!.#.$) "
 PROMPT2='[%n]> '
-RPROMPT='`_git_not_pushed``rprompt-git-current-branch`'
+RPROMPT='`rprompt-git-not-pushed``rprompt-git-stash``rprompt-git-current-branch`'
 
 case "${TERM}" in
     kterm*|xterm)
