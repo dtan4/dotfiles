@@ -9,6 +9,21 @@ colors
 export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+function _git_not_pushed()
+{
+    if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
+        head="$(git rev-parse HEAD)"
+        for x in $(git rev-parse --remotes)
+        do
+            if [ "$head" = "$x" ]; then
+                return 0
+            fi
+        done
+        echo "[%{${fg_bold[red]}%}!%{$reset_color%}]"
+    fi
+    return 0
+}
+
 function rprompt-git-current-branch {
     local name st color
 
@@ -37,7 +52,7 @@ setopt prompt_subst
 PROMPT="%{${fg[magenta]}%}%n@%m ${fg[yellow]}%}%(5~,%-2~/.../%2~,%~)%{${reset_color}%} [%D{%Y-%m-%d %T}]
 %(!.#.$) "
 PROMPT2='[%n]> '
-RPROMPT='[`rprompt-git-current-branch`]'
+RPROMPT='`_git_not_pushed`[`rprompt-git-current-branch`]'
 
 case "${TERM}" in
     kterm*|xterm)
