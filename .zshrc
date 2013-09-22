@@ -15,15 +15,9 @@ function _git_not_pushed()
     if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
         return
     fi
-    if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
-        head="$(git rev-parse HEAD)"
-        for x in $(git rev-parse --remotes)
-        do
-            if [ "$head" = "$x" ]; then
-                return 0
-            fi
-        done
-        echo "[%{${fg_bold[red]}%}!%{$reset_color%}]"
+    count=`git rev-list origin/master..master 2>/dev/null | wc -l | tr -d ' '`
+    if [[ $count -ne 0 ]]; then
+        echo "[%{${fg_bold[red]}%}${count}%{$reset_color%}]"
     fi
     return 0
 }
