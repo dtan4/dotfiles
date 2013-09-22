@@ -49,14 +49,14 @@ function rprompt-git-current-branch {
         color=${fg[red]}
     fi
 
-    echo "%{$color%}$name%{$reset_color%}"
+    echo "[%{$color%}$name%{$reset_color%}]"
 }
 
 setopt prompt_subst
 PROMPT="%{${fg[magenta]}%}%n@%m ${fg[yellow]}%}%(5~,%-2~/.../%2~,%~)%{${reset_color}%} [%D{%Y-%m-%d %T}]
 %(!.#.$) "
 PROMPT2='[%n]> '
-RPROMPT='`_git_not_pushed`[`rprompt-git-current-branch`]'
+RPROMPT='`_git_not_pushed``rprompt-git-current-branch`'
 
 case "${TERM}" in
     kterm*|xterm)
