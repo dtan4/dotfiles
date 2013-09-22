@@ -135,6 +135,7 @@ alias cddown='cd ~/Downloads'
 alias cdtmp='cd ~/tmp'
 alias cddrop='cd ~/Dropbox'
 alias cdarc='cd ~/Dropbox/Archives'
+alias cdmemo='cd ~/Dropbox/memo'
 
 alias diff='colordiff'
 
