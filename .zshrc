@@ -9,8 +9,12 @@ colors
 export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+# http://yuroyoro.hatenablog.com/entry/20110219/1298089409
 function _git_not_pushed()
 {
+    if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
+        return
+    fi
     if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
         head="$(git rev-parse HEAD)"
         for x in $(git rev-parse --remotes)
