@@ -23,3 +23,7 @@ endif
 NeoBundle 'itchyny/lightline.vim'
 
 filetype plugin indent on
+
+let g:lightline = {
+    \ 'colorscheme': 'landscape'
+    \ }
