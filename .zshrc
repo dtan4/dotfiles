@@ -129,6 +129,7 @@ alias javac="javac -J-Dfile.encoding=UTF8"
 # alias java="java -J-Dfile.encoding=UTF8"
 
 export LESS='-R'
+export TERM=xterm-256color
 
 bindkey "" backward-delete-char
 
