@@ -188,6 +188,7 @@ export PATH=~/.plenv/shims:$PATH
 eval "$(plenv init -)"
 export PATH=~/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 compdef -d rake
 compdef -d npm
