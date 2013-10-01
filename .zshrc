@@ -60,7 +60,11 @@ function rprompt-git-current-branch {
 
 setopt prompt_subst
 PROMPT="%{${fg[magenta]}%}%n@%m ${fg[yellow]}%}%(5~,%-2~/.../%2~,%~)%{${reset_color}%} [%D{%Y-%m-%d %T}]
-%(!.#.$) "
+% "
+precmd(){
+    PROMPT="%{${fg[magenta]}%}%n@%m ${fg[yellow]}%}%(5~,%-2~/.../%2~,%~)%{${reset_color}%} [%D{%Y-%m-%d %T}]
+%{%(?.${reset_color}.${fg[red]})%}%#%{${reset_color}%} "
+}
 PROMPT2='[%n]> '
 RPROMPT='`rprompt-git-not-pushed``rprompt-git-stash``rprompt-git-current-branch`'
 
