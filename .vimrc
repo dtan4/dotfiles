@@ -23,6 +23,7 @@ endif
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on
 
