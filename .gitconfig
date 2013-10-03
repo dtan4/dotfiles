@@ -2,7 +2,7 @@
 	name = dtan4
 	email = dtanshi45@gmail.com
 [color]
-    ui = always
+    ui = true
     diff = true
 [alias]
 	co = checkout
