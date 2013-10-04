@@ -5,6 +5,7 @@ set autoindent
 set number
 set showmode
 set title
+set expandtab
 set tabstop=2
 set incsearch
 set hlsearch
