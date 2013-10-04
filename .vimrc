@@ -27,6 +27,7 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'rhysd/accelerated-jk'
 
 filetype plugin indent on
 
@@ -40,6 +41,10 @@ let g:unite_source_grep_recursive_opt = ''
 let g:unite_source_grep_max_candidates = 200
 
 set splitbelow
+
+let g:accelerated_jk_acceleration_table = [10,5,3]
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
 
 " generate shebang automatically
 augroup Shebang
