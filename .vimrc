@@ -35,3 +35,17 @@ let g:unite_source_grep_command = 'ag'
 let g:unite_source_grep_default_opts = '--nocolor --nogroup'
 let g:unite_source_grep_recursive_opt = ''
 let g:unite_source_grep_max_candidates = 200
+
+augroup Shebang
+  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: utf-8 -*-\<nl>\"|$
+  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: utf-8 -*-\<nl>\"|$
+  autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
+augroup END
+
+autocmd BufWritePost * :call AddExecmod()
+function AddExecmod()
+    let line = getline(1)
+    if strpart(line, 0, 2) == "#!"
+        call system("chmod +x ". expand("%"))
+    endif
+endfunction
