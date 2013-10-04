@@ -28,6 +28,7 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/accelerated-jk'
+NeoBundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 
