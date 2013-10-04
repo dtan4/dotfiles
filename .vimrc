@@ -5,7 +5,7 @@ set autoindent
 set number
 set showmode
 set title
-set tabstop=4
+set tabstop=2
 set incsearch
 set hlsearch
 set nocompatible
@@ -24,6 +24,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'thinca/vim-quickrun'
 
 filetype plugin indent on
 
@@ -36,12 +38,16 @@ let g:unite_source_grep_default_opts = '--nocolor --nogroup'
 let g:unite_source_grep_recursive_opt = ''
 let g:unite_source_grep_max_candidates = 200
 
+set splitbelow
+
+" generate shebang automatically
 augroup Shebang
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: utf-8 -*-\<nl>\"|$
   autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: utf-8 -*-\<nl>\"|$
   autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
 augroup END
 
+" make executable if shebang
 autocmd BufWritePost * :call AddExecmod()
 function AddExecmod()
     let line = getline(1)
