@@ -195,9 +195,11 @@ export PATH=~/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# disable completion
 compdef -d rake
 compdef -d npm
 compdef -d scp
 compdef -d gem
+compdef -d thor
 
 [ -f ~/.zshrc.`uname` ] && source ~/.zshrc.`uname`
