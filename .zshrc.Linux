@@ -12,6 +12,9 @@ alias rduald='xrandr --output VGA1 --auto --output LVDS1 --auto --right-of VGA1'
 alias cloned='xrandr --output VGA1 --auto --same-as LVDS1'
 alias singled='xrandr --output VGA1 --off'
 
+### ls after cd ###
+function chpwd() { ls --color }
+
 export PATH=/usr/local/appengine-java-sdk/bin:$PATH
 
 function jpkey {

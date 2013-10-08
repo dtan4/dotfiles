@@ -8,5 +8,8 @@ alias ls="ls -G -w"
 alias emacs='/usr/local/bin/emacs'
 alias v8="rlwrap v8"
 
+### ls after cd ###
+function chpwd() { ls -G -w }
+
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/opt/gnu:$PATH
