@@ -104,6 +104,7 @@ setopt list_packed
 setopt nolistbeep
 setopt noautoremoveslash
 setopt nonomatch
+setopt correct
 
 autoload predict-on
 # predict-on
