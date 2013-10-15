@@ -1,13 +1,13 @@
 [user]
-	name = dtan4
-	email = dtanshi45@gmail.com
+    name = dtan4
+    email = dtanshi45@gmail.com
 [color]
     ui = true
     diff = true
 [alias]
-	co = checkout
-	gp = grep --color=auto -n
-	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+    co = checkout
+    gp = grep --color=auto -n
+    lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
     df = diff
     cdf = diff --cached
     st = status
