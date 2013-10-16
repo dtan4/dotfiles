@@ -150,7 +150,11 @@ alias cddrop='cd ~/Dropbox'
 alias cdarc='cd ~/Dropbox/Archives'
 alias cdmemo='cd ~/Dropbox/memo'
 
-alias diff='colordiff'
+if [[ -x `which colordiff` ]]; then
+    alias diff='colordiff -u'
+else
+    alias diff='diff -u'
+fi
 
 function server() {
     ruby -rwebrick -e 'WEBrick::HTTPServer.new({:DocumentRoot => "./", :Port => 8080}).start'
