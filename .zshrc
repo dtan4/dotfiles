@@ -150,16 +150,6 @@ alias cddrop='cd ~/Dropbox'
 alias cdarc='cd ~/Dropbox/Archives'
 alias cdmemo='cd ~/Dropbox/memo'
 
-if [[ -x `which colordiff` ]]; then
-    alias diff='colordiff -u'
-else
-    alias diff='diff -u'
-fi
-
-function server() {
-    ruby -rwebrick -e 'WEBrick::HTTPServer.new({:DocumentRoot => "./", :Port => 8080}).start'
-}
-
 ### cd to the top level of git project ###
 function cdtop() {
     if git rev-parse --is-inside-work-tree > /dev/null 2&>1; then
@@ -191,6 +181,16 @@ function frep {
 
 function pdfgrep {
     find . -name '*.pdf.txt' | xargs grep -i $1 2> /dev/null | sed -e 's/\.pdf\.txt/\.pdf/g'
+}
+
+if [[ -x `which colordiff` ]]; then
+    alias diff='colordiff -u'
+else
+    alias diff='diff -u'
+fi
+
+function server() {
+    ruby -rwebrick -e 'WEBrick::HTTPServer.new({:DocumentRoot => "./", :Port => 8080}).start'
 }
 
 REPORTTIME=3
