@@ -174,6 +174,7 @@ compdef _g cdgit
 alias curl='noglob curl'
 alias gp='grep -n --color=auto'
 alias gcc='gcc -Werror -Wall'
+alias be='bundle exec'
 
 function frep {
     find . -type f -name $1 | xargs grep $2
