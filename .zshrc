@@ -175,6 +175,7 @@ alias curl='noglob curl'
 alias gp='grep -n --color=auto'
 alias gcc='gcc -Werror -Wall'
 alias be='bundle exec'
+alias bi='bundle install'
 
 function frep {
     find . -type f -name $1 | xargs grep $2
