@@ -213,6 +213,12 @@ if [[ -d $HOME/.rbenv ]]; then
     eval "$(rbenv init -)"
 fi
 
+if [[ -d $HOME/.ndenv ]]; then
+    export PATH=~/.ndenv/bin:$PATH
+    export PATH=~/.ndenv/shims:$PATH
+    eval "$(ndenv init -)"
+fi
+
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # disable completion
