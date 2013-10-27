@@ -208,6 +208,7 @@ if [[ -d $HOME/.plenv ]]; then
 fi
 
 if [[ -d $HOME/.rbenv ]]; then
+    export PATH=~/.rbenv/bin:$PATH
     export PATH=~/.rbenv/shims:$PATH
     eval "$(rbenv init -)"
 fi
