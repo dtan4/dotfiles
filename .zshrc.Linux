@@ -26,3 +26,9 @@ function uskey {
     setxkbmap -layout us
     xmodmap ~/.Xmodmap
 }
+
+function cpufreq {
+    echo $1
+    sudo su -c "cpupower frequency-set -g $1"
+}
+
