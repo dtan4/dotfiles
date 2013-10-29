@@ -7,12 +7,8 @@ fi
 alias ls='ls --color=auto'
 alias open="xdg-open"
 alias eclipse='MALLOC_CHECK_=0 /usr/local/eclipse/eclipse'
-# alias duald='xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1'
-# alias rduald='xrandr --output VGA1 --auto --output LVDS1 --auto --right-of VGA1'
-# alias cloned='xrandr --output VGA1 --auto --same-as LVDS1'
-# alias singled='xrandr --output VGA1 --off'
-alias duald='xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1'
-alias rduald='xrandr --output HDMI1 --auto --output eDP1 --auto --right-of HDMI1'
+alias lduald='xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1'
+alias duald='xrandr --output HDMI1 --auto --output eDP1 --auto --right-of HDMI1'
 alias cloned='xrandr --output HDMI1 --auto --same-as eDP1'
 alias singled='xrandr --output HDMI1 --off'
 
