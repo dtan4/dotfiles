@@ -29,6 +29,7 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'elzr/vim-json'
 
 filetype plugin indent on
 
