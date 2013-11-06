@@ -31,6 +31,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'elzr/vim-json'
 
 filetype plugin indent on
 
