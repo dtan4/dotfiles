@@ -1,0 +1,15 @@
+urxvt*foreground: green
+urxvt*background: black
+URxvt*termName: xterm-256color
+URxvt*saveLines: 10000
+URxvt*scrollBar: false
+URxvt*font: xft:ricty:size=16:antialias=true
+URxvt*boldfont: xft:ricty:size=16:antialias=true
+URxvt*inputMethod: xim
+URxvt*preeditType: OffTheSpot
+URxvt*iso14755: False
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher: google-chrome
+URxvt.url-select.underline: true
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
