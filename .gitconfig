@@ -18,3 +18,5 @@
       curl "http://gitignore.io/api/$s"; }; f"
 [include]
     path = ~/.gitconfig.local
+[help]
+	autocorrect = -1
