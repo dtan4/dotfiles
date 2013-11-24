@@ -1,3 +1,5 @@
+Emacs*useXIM: false
+
 urxvt*foreground: green
 urxvt*background: black
 URxvt*termName: xterm-256color
