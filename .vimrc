@@ -14,6 +14,7 @@ set incsearch
 set hlsearch
 set nocompatible
 set laststatus=2
+set backspace=indent,eol,start
 
 if !has('gui-running')
   set t_Co=256
