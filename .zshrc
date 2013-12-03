@@ -207,6 +207,12 @@ if [[ -d $HOME/.plenv ]]; then
     eval "$(plenv init -)"
 fi
 
+if [[ -d $HOME/.pyenv ]]; then
+    export PATH=~/.pyenv/bin:$PATH
+    export PATH=~/.pyenv/shims:$PATH
+    eval "$(pyenv init -)"
+fi
+
 if [[ -d $HOME/.rbenv ]]; then
     export PATH=~/.rbenv/bin:$PATH
     export PATH=~/.rbenv/shims:$PATH
