@@ -20,3 +20,7 @@
     path = ~/.gitconfig.local
 [help]
 	autocorrect = -1
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
