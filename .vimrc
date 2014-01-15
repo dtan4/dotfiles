@@ -36,6 +36,9 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+
+highlight clear SignColumn
 
 filetype plugin indent on
 
