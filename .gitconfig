@@ -15,7 +15,7 @@
     cam = commit --amend -m
     ignore = !"f() { local s=$1; shift; \
       while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
-      curl "http://gitignore.io/api/$s"; }; f"
+      curl "http://www.gitignore.io/api/$s"; }; f"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [include]
     path = ~/.gitconfig.local
