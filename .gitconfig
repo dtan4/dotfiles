@@ -17,6 +17,8 @@
     while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
     curl "http://www.gitignore.io/api/$s"; }; f"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+  plom = pull origin master
+  puom = push -u origin master
 [include]
   path = ~/.gitconfig.local
 [help]
