@@ -1,7 +1,7 @@
 tap phinze/cask
 install brew-cask
 
-install emacs --cocoa --srgb --japanese
+install emacs --cocoa --srgb --with-gnutls
 install vim
 install zsh
 install git
@@ -13,5 +13,13 @@ install readline
 install terminal-notifier
 install openssl
 install hub
+install tig
+
+cask install alfred
+cask install virtualbox
+cask install vagrant
+cask install thunderbird
+cask install eclipse-ide
+cask install skype
 
 cleanup
