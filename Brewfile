@@ -20,6 +20,7 @@ cask install virtualbox
 cask install vagrant
 cask install thunderbird
 cask install eclipse-ide
+cask install eclipse-platform
 cask install skype
 
 cleanup
