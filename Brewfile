@@ -1,5 +1,5 @@
 tap phinze/cask
-install brew-cask
+tap sanemat/font
 
 install emacs --cocoa --srgb --with-gnutls
 install vim
@@ -14,6 +14,8 @@ install terminal-notifier
 install openssl
 install hub
 install tig
+install brew-cask
+install ricty
 
 cask install alfred
 cask install virtualbox
