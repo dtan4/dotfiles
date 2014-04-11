@@ -16,6 +16,13 @@ install hub
 install tig
 install brew-cask
 install ricty
+install graphviz
+install plantuml
+install imagemagick
+install graphicsmagick
+install memcached
+install nginx
+install mysql
 
 cask install alfred
 cask install virtualbox
@@ -24,5 +31,11 @@ cask install thunderbird
 cask install eclipse-ide
 cask install eclipse-platform
 cask install skype
+cask install appcleaner
+cask install android-studio
+cask install genymotion
+cask install google-chrome
+cask install dash
+cask install sourcetree
 
 cleanup
