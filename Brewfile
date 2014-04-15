@@ -1,7 +1,7 @@
 tap phinze/cask
 tap sanemat/font
 
-install emacs --cocoa --srgb --with-gnutls
+install emacs --cocoa --srgb --with-gnutls --japanese
 install vim
 install zsh
 install git
