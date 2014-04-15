@@ -23,6 +23,7 @@ install graphicsmagick
 install memcached
 install nginx
 install mysql
+install markdown
 
 cask install alfred
 cask install virtualbox
@@ -37,5 +38,6 @@ cask install genymotion
 cask install google-chrome
 cask install dash
 cask install sourcetree
+cask install dropbox
 
 cleanup
