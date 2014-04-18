@@ -24,6 +24,11 @@ install memcached
 install nginx
 install mysql
 install markdown
+install direnv
+install go
+install tree
+install source-highlight
+install redis
 
 cask install alfred
 cask install virtualbox
@@ -39,5 +44,6 @@ cask install google-chrome
 cask install dash
 cask install sourcetree
 cask install dropbox
+cask install google-japanese-ime
 
 cleanup
