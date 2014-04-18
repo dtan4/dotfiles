@@ -13,9 +13,11 @@ namespace :setup do
   desc "Make symlinks from home directory to the dotfiles"
   task :symlink_dotfiles do
     Dir.glob("*", File::FNM_DOTMATCH) do |file|
+      uname = `uname`.strip
+
       next if SYMLINKS_EXCLUDE.include?(file)
-      next if (`uname` != "Darwin") && MAC_ONLY.include?(file)
-      next if (`uname` != "Linux") && LINUX_ONLY.include?(file)
+      next if (uname != "Darwin") && MAC_ONLY.include?(file)
+      next if (uname != "Linux") && LINUX_ONLY.include?(file)
 
       source = File.join(Dir.pwd, file)
       destination = File.join(ENV["HOME"], file)
