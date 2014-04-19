@@ -1,49 +1,49 @@
 tap phinze/cask
 tap sanemat/font
 
+install brew-cask
+install direnv
 install emacs --cocoa --srgb --with-gnutls --japanese
+install fontforge
+install git
+install go
+install graphicsmagick
+install graphviz
+install hub
+install imagemagick
+install markdown
+install memcached
+install mysql
+install nginx
+install openssl
+install plantuml
+install readline
+install redis
+install ricty
+install source-highlight
+install sqlite
+install terminal-notifier
+install the_silver_searcher
+install tig
+install tmux
+install tree
 install vim
 install zsh
-install git
-install fontforge
-install sqlite
-install the_silver_searcher
-install tmux
-install readline
-install terminal-notifier
-install openssl
-install hub
-install tig
-install brew-cask
-install ricty
-install graphviz
-install plantuml
-install imagemagick
-install graphicsmagick
-install memcached
-install nginx
-install mysql
-install markdown
-install direnv
-install go
-install tree
-install source-highlight
-install redis
 
 cask install alfred
-cask install virtualbox
-cask install vagrant
-cask install thunderbird
+cask install android-studio
+cask install appcleaner
+cask install dash
+cask install dropbox
 cask install eclipse-ide
 cask install eclipse-platform
-cask install skype
-cask install appcleaner
-cask install android-studio
 cask install genymotion
 cask install google-chrome
-cask install dash
-cask install sourcetree
-cask install dropbox
 cask install google-japanese-ime
+cask install skype
+cask install sourcetree
+cask install thunderbird
+cask install vagrant
+cask install virtualbox
 
 cleanup
