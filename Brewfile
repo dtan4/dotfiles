@@ -18,6 +18,7 @@ install nginx
 install openssl
 install plantuml
 install readline
+install reattach-to-user-namespace
 install redis
 install ricty
 install source-highlight
