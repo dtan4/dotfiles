@@ -9,6 +9,7 @@ install git
 install go
 install graphicsmagick
 install graphviz
+install heroku-toolbelt
 install hub
 install imagemagick
 install markdown
