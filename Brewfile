@@ -1,51 +1,51 @@
 tap phinze/cask
 tap sanemat/font
 
-install brew-cask
-install direnv
-install emacs --cocoa --srgb --with-gnutls --japanese
-install fontforge
-install git
-install go
-install graphicsmagick
-install graphviz
-install heroku-toolbelt
-install hub
-install imagemagick
-install markdown
-install memcached
-install mysql
-install nginx
-install openssl
-install plantuml
-install readline
-install reattach-to-user-namespace
-install redis
-install ricty
-install source-highlight
-install sqlite
-install terminal-notifier
-install the_silver_searcher
-install tig
-install tmux
-install tree
-install vim
-install zsh
+install brew-cask || true
+install direnv || true
+install emacs --cocoa --srgb --with-gnutls --japanese || true
+install fontforge || true
+install git || true
+install go || true
+install graphicsmagick || true
+install graphviz || true
+install heroku-toolbelt || true
+install hub || true
+install imagemagick || true
+install markdown || true
+install memcached || true
+install mysql || true
+install nginx || true
+install openssl || true
+install plantuml || true || true
+install readline || true
+install reattach-to-user-namespace || true
+install redis || true
+install ricty || true
+install source-highlight || true
+install sqlite || true
+install terminal-notifier || true
+install the_silver_searcher || true
+install tig || true
+install tmux || true
+install tree || true
+install vim || true
+install zsh || true
 
-cask install alfred
-cask install android-studio
-cask install appcleaner
-cask install dash
-cask install dropbox
-cask install eclipse-ide
-cask install eclipse-platform
-cask install genymotion
-cask install google-chrome
-cask install google-japanese-ime
-cask install skype
-cask install sourcetree
-cask install thunderbird
-cask install vagrant
-cask install virtualbox
+cask install alfred || true
+cask install android-studio || true
+cask install appcleaner || true
+cask install dash || true
+cask install dropbox || true
+cask install eclipse-ide || true
+cask install eclipse-platform || true
+cask install genymotion || true
+cask install google-chrome || true
+cask install google-japanese-ime || true
+cask install skype || true
+cask install sourcetree || true
+cask install thunderbird || true
+cask install vagrant || true
+cask install virtualbox || true
 
 cleanup
