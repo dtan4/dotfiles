@@ -1,6 +1,6 @@
 SYMLINKS_EXCLUDE = %w{. .. .git .gitmodules Rakefile .xinitrc README.md}
 LINUX_ONLY = %w{.conkyrc .Xresources}
-MAC_ONLY = %w{Brewfile}
+MAC_ONLY = %w{}
 
 task default: "setup:setup"
 
