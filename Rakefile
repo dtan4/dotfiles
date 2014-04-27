@@ -1,6 +1,6 @@
 SYMLINKS_EXCLUDE = %w{. .. .git .gitmodules Rakefile .xinitrc README.md}
 LINUX_ONLY = %w{.conkyrc .Xresources}
-MAC_ONLY = %w{}
+MAC_ONLY = %w{.tmux-Darwin.conf}
 
 task default: "setup:setup"
 
