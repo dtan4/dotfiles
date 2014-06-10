@@ -13,6 +13,7 @@
   st = status
   cm = commit -m
   cam = commit --amend -m
+  can = commit --amend --no-edit
   ignore = !"f() { local s=$1; shift; \
     while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
     curl "http://www.gitignore.io/api/$s"; }; f"
