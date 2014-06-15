@@ -1,33 +1,33 @@
 [user]
-  name = dtan4
-  email = dtanshi45@gmail.com
+	name = dtan4
+	email = dtanshi45@gmail.com
 [color]
-  ui = true
-  diff = true
+	ui = true
+	diff = true
 [alias]
-  co = checkout
-  gp = grep --color=auto -n
-  lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
-  df = diff
-  cdf = diff --cached
-  st = status
-  cm = commit -m
-  cam = commit --amend -m
-  can = commit --amend --no-edit
-  ignore = !"f() { local s=$1; shift; \
-    while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
-    curl "http://www.gitignore.io/api/$s"; }; f"
+	co = checkout
+	gp = grep --color=auto -n
+	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+	df = diff
+	cdf = diff --cached
+	st = status
+	cm = commit -m
+	cam = commit --amend -m
+	can = commit --amend --no-edit
+	ignore = !"f() { local s=$1; shift; \
+	while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
+	curl "http://www.gitignore.io/api/$s"; }; f"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
-  plom = pull origin master
-  puom = push -u origin master
+	plom = pull origin master
+	puom = push -u origin master
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [help]
 	autocorrect = -1
 [pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
 [core]
 	editor = vim
 	autocrlf = input
