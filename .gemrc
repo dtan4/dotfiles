@@ -2,4 +2,4 @@ verbose: true
 update_sources: true
 backtrace: true
 gem: --no-ri --no-rdoc
-gemsrc_clone_root: ~/git/github
+gemsrc_use_ghq: true
