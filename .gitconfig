@@ -31,3 +31,5 @@
 [core]
 	editor = vim
 	autocrlf = input
+[ghq]
+	root = ~/git/repos
