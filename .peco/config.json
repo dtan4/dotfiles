@@ -4,5 +4,10 @@
         "C-n": "peco.SelectNext",
         "C-c": "peco.Cancel",
         "C-v": "peco.SelectNextPage"
+    },
+    "Style":{
+        "Basic": ["on_default", "default"],
+        "Selected": ["underline", "on_magenta", "white"],
+        "Query": ["yellow", "bold"]
     }
 }
