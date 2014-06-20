@@ -38,11 +38,11 @@ task :create_symlinks do
     next if (uname != "Linux") && LINUX_ONLY.include?(file)
 
     source = File.join(Dir.pwd, file)
-    destination = File.join(ENV["HOME"], file)
+    target = File.join(ENV["HOME"], file)
 
-    next if File.exists?(destination) || Dir.exists?(destination)
+    next if File.exists?(target) || Dir.exists?(target)
 
-    ln_s(source, destination)
+    ln_s(source, target)
   end
 end
 
