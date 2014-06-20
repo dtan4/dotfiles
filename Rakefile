@@ -65,6 +65,7 @@ desc "Install anyenv"
 task :install_anyenv do
   unless Dir.exists?(ANYENV_DIR)
     clone_from_github("riywo/anyenv", ANYENV_DIR)
+    sh %(eval "$(#{anyenv} init - zsh)")
     sh %(exec $SHELL -l)
   end
 
@@ -118,14 +119,18 @@ end
 
 private
 
+def anyenv
+  File.join(ANYENV_DIR, "bin", "anyenv")
+end
+
 def clone_from_github(repository, target_dir)
   sh %(git clone --recursive https://github.com/#{repository}.git #{target_dir})
 end
 
 def env_installed?(env)
-  `anyenv envs`.split("\n").include?(env)
+  `#{anyenv} envs`.split("\n").include?(env)
 end
 
 def install_env(env)
-  sh %(anyenv install #{env}) unless env_installed?(env)
+  sh %(#{anyenv} install #{env}) unless env_installed?(env)
 end
