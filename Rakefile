@@ -65,8 +65,7 @@ desc "Install anyenv"
 task :install_anyenv do
   unless Dir.exists?(ANYENV_DIR)
     clone_from_github("riywo/anyenv", ANYENV_DIR)
-    sh %(eval "$(#{anyenv} init - zsh)")
-    sh %(exec $SHELL -l)
+    sh %(#{anyenv} init -)
   end
 
   Rake::Task["install_anyenv_plugins"].invoke
