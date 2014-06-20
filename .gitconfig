@@ -33,3 +33,5 @@
 	autocrlf = input
 [ghq]
 	root = ~/git/repos
+	root = ~/git
+	root = ~/.go/src
