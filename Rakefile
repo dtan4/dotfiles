@@ -4,6 +4,10 @@ MAC_ONLY = %w(.tmux-Darwin.conf)
 
 ANYENV_DIR = File.join(ENV["HOME"], ".anyenv")
 
+ANYENV_PLUGINS = {
+                  "anyenv-update" => "znz/anyenv-update"
+                 }
+
 RBENV_PLUGINS = {
                  "gem-src" => "amatsuda/gem-src.git",
                  "rbenv-default-gems" => "sstephenson/rbenv-default-gems",
@@ -23,6 +27,7 @@ end
 desc "Update dotfiles"
 task :update => [
                  :update_submodules,
+                 :install_anyenv_plugins,
                  :install_rbenv_plugins,
                  :create_symlinks
                 ] do
@@ -63,8 +68,20 @@ task :install_anyenv do
     sh %(exec $SHELL -l)
   end
 
+  Rake::Task["install_anyenv_plugins"].invoke
+
   %w(rbenv plenv ndenv).each do |env|
     Rake::Task["install_#{env}"].invoke
+  end
+end
+
+desc "Install anyenv plugins"
+task :install_anyenv_plugins do
+  ANYENV_PLUGINS.each do |plugin, repository|
+    plugin_dir = File.join(ANYENV_DIR, "plugins", plugin)
+    next if Dir.exists?(plugin_dir)
+
+    clone_from_github(repository, plugin_dir)
   end
 end
 
@@ -102,7 +119,7 @@ end
 private
 
 def clone_from_github(repository, target_dir)
-  sh %(git clone --recursive https://github.com/#{repository} #{target_dir})
+  sh %(git clone --recursive https://github.com/#{repository}.git #{target_dir})
 end
 
 def env_installed?(env)
