@@ -6,6 +6,7 @@ ANYENV_DIR = File.join(ENV["HOME"], ".anyenv")
 
 RBENV_PLUGINS = {
                  "gem-src" => "amatsuda/gem-src.git",
+                 "rbenv-default-gems" => "sstephenson/rbenv-default-gems",
                  "rbenv-gem-rehash" => "sstephenson/rbenv-gem-rehash",
                 }
 
@@ -91,6 +92,8 @@ task :install_rbenv_plugins do
 
     clone_from_github(repository, plugin_dir)
   end
+
+  ln_s(File.join(Dir.pwd, "default-gems"), File.join(ANYENV_DIR, "envs", "rbenv", "default-gems"))
 end
 
 private
