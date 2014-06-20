@@ -9,7 +9,7 @@ ANYENV_PLUGINS = {
                  }
 
 RBENV_PLUGINS = {
-                 "gem-src" => "amatsuda/gem-src.git",
+                 "gem-src" => "amatsuda/gem-src",
                  "rbenv-default-gems" => "sstephenson/rbenv-default-gems",
                  "rbenv-gem-rehash" => "sstephenson/rbenv-gem-rehash",
                 }
