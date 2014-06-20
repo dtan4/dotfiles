@@ -1,4 +1,4 @@
-SYMLINKS_EXCLUDE = %w(. .. .git .gitmodules Rakefile .xinitrc README.md)
+SYMLINKS_EXCLUDE = %w(. .. .git .gitmodules Rakefile .xinitrc README.md default-gems)
 LINUX_ONLY = %w(.conkyrc .Xresources)
 MAC_ONLY = %w(.tmux-Darwin.conf)
 
@@ -93,7 +93,10 @@ task :install_rbenv_plugins do
     clone_from_github(repository, plugin_dir)
   end
 
-  ln_s(File.join(Dir.pwd, "default-gems"), File.join(ANYENV_DIR, "envs", "rbenv", "default-gems"))
+  source = File.join(Dir.pwd, "default-gems")
+  target = File.join(ANYENV_DIR, "envs", "rbenv", "default-gems")
+
+  ln_s(source, target) unless File.exist?(target)
 end
 
 private
