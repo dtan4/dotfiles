@@ -85,11 +85,11 @@ end
 
 desc "Install rbenv plugins"
 task :install_rbenv_plugins do
-  RBENV_PLUGINS.keys.each do |plugin|
+  RBENV_PLUGINS.each do |plugin, repository|
     plugin_dir = File.join(ANYENV_DIR, "envs", "rbenv", "plugins", plugin)
     next if Dir.exists?(plugin_dir)
 
-    clone_from_github(RBENV_PLUGINS[plugin], plugin_dir)
+    clone_from_github(repository, plugin_dir)
   end
 end
 
