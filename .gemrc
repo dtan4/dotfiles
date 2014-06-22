@@ -3,3 +3,4 @@ update_sources: true
 backtrace: true
 gem: --no-ri --no-rdoc
 gemsrc_use_ghq: true
+jobs: 4
