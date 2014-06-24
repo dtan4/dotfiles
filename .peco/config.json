@@ -3,7 +3,8 @@
         "C-p": "peco.SelectPrevious",
         "C-n": "peco.SelectNext",
         "C-c": "peco.Cancel",
-        "C-v": "peco.SelectNextPage"
+        "C-v": "peco.SelectNextPage",
+        "M-v": "peco.SelectPreviousPage"
     },
     "Style":{
         "Basic": ["on_default", "default"],
