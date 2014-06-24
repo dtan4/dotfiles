@@ -33,6 +33,13 @@ task :update => [
                 ] do
 end
 
+desc "Clean up .vim/bundle"
+task :clean do
+  Dir.glob(".vim/bundle/*") do |dir|
+    rm_r dir unless /neobundle\.vim\z/ =~ dir
+  end
+end
+
 desc "Create symlinks"
 task :create_symlinks do
   uname = `uname`.strip
