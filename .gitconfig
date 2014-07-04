@@ -32,6 +32,6 @@
 	editor = vim
 	autocrlf = input
 [ghq]
-	root = ~/git/repos
+	root = ~/.ghq
 	root = ~/git
 	root = ~/.go/src
