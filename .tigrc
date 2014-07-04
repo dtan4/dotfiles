@@ -4,3 +4,7 @@ color date yellow default
 color graph-commit magenta default
 color diff-index cyan default
 color diff-stat cyan default
+
+# http://qiita.com/yaotti/items/62947b0c981ae38fae82
+bind main G !@hub browse -- commit/%(commit)
+bind diff G !@hub browse -- commit/%(commit)
