@@ -5,32 +5,32 @@ MAC_ONLY = %w(.tmux-Darwin.conf)
 ANYENV_DIR = File.join(ENV["HOME"], ".anyenv")
 
 ANYENV_PLUGINS = {
-                  "anyenv-update" => "znz/anyenv-update"
-                 }
+  "anyenv-update" => "znz/anyenv-update"
+}
 
 RBENV_PLUGINS = {
-                 "gem-src" => "amatsuda/gem-src",
-                 "rbenv-default-gems" => "sstephenson/rbenv-default-gems",
-                 "rbenv-gem-rehash" => "sstephenson/rbenv-gem-rehash",
-                }
+  "gem-src" => "amatsuda/gem-src",
+  "rbenv-default-gems" => "sstephenson/rbenv-default-gems",
+  "rbenv-gem-rehash" => "sstephenson/rbenv-gem-rehash",
+}
 
 task default: "update"
 
 desc "Install dotfiles"
 task :install => [
-                  :init_submodules,
-                  :install_anyenv,
-                  :create_symlinks
-                 ] do
+  :init_submodules,
+  :install_anyenv,
+  :create_symlinks
+] do
 end
 
 desc "Update dotfiles"
 task :update => [
-                 :update_submodules,
-                 :install_anyenv_plugins,
-                 :install_rbenv_plugins,
-                 :create_symlinks
-                ] do
+  :update_submodules,
+  :install_anyenv_plugins,
+  :install_rbenv_plugins,
+  :create_symlinks
+] do
 end
 
 desc "Clean up .vim/bundle"
