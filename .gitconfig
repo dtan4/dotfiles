@@ -35,3 +35,5 @@
 	root = ~/.ghq
 	root = ~/git
 	root = ~/.go/src
+[ghq "https://github.com/"]
+	vcs = git
