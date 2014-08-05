@@ -39,3 +39,5 @@
 	vcs = git
 [url "git@github.com:dtan4"]
 	pushInsteadOf = https://github.com/dtan4
+[diff]
+	renames = true
