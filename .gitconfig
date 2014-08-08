@@ -5,6 +5,7 @@
 	ui = true
 	diff = true
 [alias]
+	br = branch
 	co = checkout
 	gp = grep --color=auto -n
 	lg = log --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(white)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches
