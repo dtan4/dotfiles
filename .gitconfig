@@ -32,6 +32,7 @@
 [core]
 	editor = vim
 	autocrlf = input
+	quotepath = false
 [ghq]
 	root = ~/.ghq
 	root = ~/git
