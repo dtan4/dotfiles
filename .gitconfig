@@ -33,6 +33,7 @@
 	editor = vim
 	autocrlf = input
 	quotepath = false
+	excludesfile = ~/.gitignore
 [ghq]
 	root = ~/.ghq
 	root = ~/git
