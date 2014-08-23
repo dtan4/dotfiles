@@ -44,3 +44,5 @@
 	pushInsteadOf = https://github.com/dtan4
 [diff]
 	renames = true
+[merge]
+	ff = false
