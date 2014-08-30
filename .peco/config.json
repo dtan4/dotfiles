@@ -3,12 +3,13 @@
         "C-p": "peco.SelectUp",
         "C-n": "peco.SelectDown",
         "C-c": "peco.Cancel",
+        "C-g": "peco.Cancel",
         "C-v": "peco.SelectNextPage",
         "M-v": "peco.SelectPreviousPage"
     },
     "Style":{
         "Basic": ["on_default", "default"],
         "Selected": ["underline", "on_magenta", "white"],
-        "Query": ["yellow", "bold"]
+        "Matched": ["yellow", "bold"]
     }
 }
