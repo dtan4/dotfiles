@@ -4,8 +4,8 @@
         "C-n": "peco.SelectDown",
         "C-c": "peco.Cancel",
         "C-g": "peco.Cancel",
-        "C-v": "peco.SelectNextPage",
-        "M-v": "peco.SelectPreviousPage"
+        "C-v": "peco.ScrollPageDown",
+        "M-v": "peco.ScrollPageUp"
     },
     "Style":{
         "Basic": ["on_default", "default"],
