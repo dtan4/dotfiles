@@ -21,6 +21,7 @@
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 	plom = pull origin master
 	puom = push -u origin master
+	phom = push heroku master
 [include]
 	path = ~/.gitconfig.local
 [help]
