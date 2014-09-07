@@ -22,19 +22,10 @@ endif
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-let vimproc_updcmd = has('win64') ?
-      \ 'tools\\update-dll-mingw 64' : 'tools\\update-dll-mingw 32'
-execute "NeoBundle 'Shougo/vimproc.vim'," . string({
-      \ 'build' : {
-      \     'windows' : vimproc_updcmd,
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ })
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Shougo/unite.vim'
@@ -48,9 +39,23 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 
-highlight clear SignColumn
+call neobundle#end()
 
 filetype plugin indent on
+NeoBundleCheck
+
+" let vimproc_updcmd = has('win64') ?
+"       \ 'tools\\update-dll-mingw 64' : 'tools\\update-dll-mingw 32'
+" execute "NeoBundle 'Shougo/vimproc.vim'," . string({
+"       \ 'build' : {
+"       \     'windows' : vimproc_updcmd,
+"       \     'cygwin' : 'make -f make_cygwin.mak',
+"       \     'mac' : 'make -f make_mac.mak',
+"       \     'unix' : 'make -f make_unix.mak',
+"       \    },
+"       \ })
+
+highlight clear SignColumn
 
 let g:lightline = {
       \ 'colorscheme': 'landscape',
