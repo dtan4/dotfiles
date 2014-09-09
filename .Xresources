@@ -5,8 +5,8 @@ urxvt*background: black
 URxvt*termName: xterm-256color
 URxvt*saveLines: 10000
 URxvt*scrollBar: false
-URxvt*font: xft:ricty:size=15:antialias=true
-URxvt*boldfont: xft:ricty:size=15:antialias=true
+URxvt*font: xft:Ricty:size=16:antialias=true
+URxvt*boldfont: xft:Ricty:Bold:size=16:antialias=true
 URxvt*inputMethod: xim
 URxvt*preeditType: OffTheSpot
 URxvt*iso14755: False
