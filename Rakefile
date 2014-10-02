@@ -65,7 +65,8 @@ end
 
 desc "Update submodules"
 task :update_submodules do
-  sh %(git submodule update)
+  Dir.chdir(File.join(Dir.pwd, ".vim", "bundle", "neobundle.vim"))
+  sh %(git pull origin master)
 end
 
 desc "Install anyenv"
