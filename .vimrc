@@ -38,6 +38,7 @@ NeoBundle 'slim-template/vim-slim'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'ekalinin/Dockerfile.vim'
 
 call neobundle#end()
 
