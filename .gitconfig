@@ -15,9 +15,7 @@
 	cm = commit -m
 	cam = commit --amend -m
 	can = commit --amend --no-edit
-	ignore = !"f() { local s=$1; shift; \
-	while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
-	curl "http://www.gitignore.io/api/$s"; }; f"
+	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 	plom = pull origin master
 	puom = push -u origin master
