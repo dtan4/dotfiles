@@ -1,6 +1,6 @@
 Emacs*useXIM: false
 
-urxvt*foreground: green
+urxvt*foreground: white
 urxvt*background: black
 URxvt*termName: xterm-256color
 URxvt*saveLines: 10000
