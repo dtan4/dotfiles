@@ -9,6 +9,7 @@
 	co = checkout
 	gp = grep --color=auto -n
 	lg = log --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(white)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches
+	lgg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
 	df = diff
 	cdf = diff --cached
 	st = status --short --branch
