@@ -40,7 +40,7 @@
 	root = ~/.go/src
 [ghq "https://github.com/"]
 	vcs = git
-[url "git@github.com:dtan4"]
-	pushInsteadOf = https://github.com/dtan4
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 [diff]
 	renames = true
