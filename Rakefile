@@ -18,18 +18,18 @@ task default: "update"
 
 desc "Install dotfiles"
 task :install => [
-  :init_submodules,
-  :install_anyenv,
-  :create_symlinks
+  "submodule:init",
+  "install:anyenv",
+  "symlink"
 ] do
 end
 
 desc "Update dotfiles"
 task :update => [
-  :update_submodules,
-  :install_anyenv_plugins,
-  :install_rbenv_plugins,
-  :create_symlinks
+  "submodule:update",
+  "install:anyenv_plugins",
+  "install:rbenv_plugins",
+  "symlink"
 ] do
 end
 
@@ -41,7 +41,7 @@ task :clean do
 end
 
 desc "Create symlinks"
-task :create_symlinks do
+task :symlink do
   uname = `uname`.strip
 
   Dir.glob("*", File::FNM_DOTMATCH) do |file|
@@ -58,70 +58,74 @@ task :create_symlinks do
   end
 end
 
-desc "Install submodules"
-task :init_submodules do
-  sh %(git submodule update --init)
-end
-
-desc "Update submodules"
-task :update_submodules do
-  Dir.chdir(File.join(Dir.pwd, ".vim", "bundle", "neobundle.vim"))
-  sh %(git pull origin master)
-end
-
-desc "Install anyenv"
-task :install_anyenv do
-  unless Dir.exists?(ANYENV_DIR)
-    clone_from_github("riywo/anyenv", ANYENV_DIR)
-    sh %(#{anyenv} init -)
+namespace :submodule do
+  desc "Install submodules"
+  task :init do
+    sh %(git submodule update --init)
   end
 
-  Rake::Task["install_anyenv_plugins"].invoke
-
-  %w(rbenv plenv ndenv).each do |env|
-    Rake::Task["install_#{env}"].invoke
+  desc "Update submodules"
+  task :update do
+    Dir.chdir(File.join(Dir.pwd, ".vim", "bundle", "neobundle.vim"))
+    sh %(git pull origin master)
   end
 end
 
-desc "Install anyenv plugins"
-task :install_anyenv_plugins do
-  ANYENV_PLUGINS.each do |plugin, repository|
-    plugin_dir = File.join(ANYENV_DIR, "plugins", plugin)
-    next if Dir.exists?(plugin_dir)
+namespace :install do
+  desc "Install anyenv"
+  task :anyenv do
+    unless Dir.exists?(ANYENV_DIR)
+      clone_from_github("riywo/anyenv", ANYENV_DIR)
+      sh %(#{anyenv} init -)
+    end
 
-    clone_from_github(repository, plugin_dir)
-  end
-end
+    Rake::Task["install_anyenv_plugins"].invoke
 
-desc "Install ndenv"
-task :install_ndenv do
-  install_env("ndenv")
-end
-
-desc "Install plenv"
-task :install_plenv do
-  install_env("plenv")
-end
-
-desc "Install rbenv"
-task :install_rbenv do
-  install_env("rbenv")
-  Rake::Task["install_rbenv_plugins"].invoke
-end
-
-desc "Install rbenv plugins"
-task :install_rbenv_plugins do
-  RBENV_PLUGINS.each do |plugin, repository|
-    plugin_dir = File.join(ANYENV_DIR, "envs", "rbenv", "plugins", plugin)
-    next if Dir.exists?(plugin_dir)
-
-    clone_from_github(repository, plugin_dir)
+    %w(rbenv plenv ndenv).each do |env|
+      Rake::Task["install_#{env}"].invoke
+    end
   end
 
-  source = File.join(Dir.pwd, "default-gems")
-  target = File.join(ANYENV_DIR, "envs", "rbenv", "default-gems")
+  desc "Install anyenv plugins"
+  task :anyenv_plugins do
+    ANYENV_PLUGINS.each do |plugin, repository|
+      plugin_dir = File.join(ANYENV_DIR, "plugins", plugin)
+      next if Dir.exists?(plugin_dir)
 
-  ln_s(source, target) unless File.exist?(target)
+      clone_from_github(repository, plugin_dir)
+    end
+  end
+
+  desc "Install ndenv"
+  task :ndenv do
+    install_env("ndenv")
+  end
+
+  desc "Install plenv"
+  task :plenv do
+    install_env("plenv")
+  end
+
+  desc "Install rbenv"
+  task :rbenv do
+    install_env("rbenv")
+    Rake::Task["install_rbenv_plugins"].invoke
+  end
+
+  desc "Install rbenv plugins"
+  task :rbenv_plugins do
+    RBENV_PLUGINS.each do |plugin, repository|
+      plugin_dir = File.join(ANYENV_DIR, "envs", "rbenv", "plugins", plugin)
+      next if Dir.exists?(plugin_dir)
+
+      clone_from_github(repository, plugin_dir)
+    end
+
+    source = File.join(Dir.pwd, "default-gems")
+    target = File.join(ANYENV_DIR, "envs", "rbenv", "default-gems")
+
+    ln_s(source, target) unless File.exist?(target)
+  end
 end
 
 private
