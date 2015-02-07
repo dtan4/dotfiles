@@ -79,10 +79,10 @@ namespace :install do
       sh %(#{anyenv} init -)
     end
 
-    Rake::Task["install_anyenv_plugins"].invoke
+    Rake::Task["install:anyenv_plugins"].invoke
 
     %w(rbenv plenv ndenv).each do |env|
-      Rake::Task["install_#{env}"].invoke
+      Rake::Task["install:#{env}"].invoke
     end
   end
 
@@ -109,7 +109,7 @@ namespace :install do
   desc "Install rbenv"
   task :rbenv do
     install_env("rbenv")
-    Rake::Task["install_rbenv_plugins"].invoke
+    Rake::Task["install:rbenv_plugins"].invoke
   end
 
   desc "Install rbenv plugins"
