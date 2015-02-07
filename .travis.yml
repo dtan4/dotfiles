@@ -1,3 +1,6 @@
 language: bash
 script:
   rake install
+notifications:
+  slack:
+    secure: bUp1oitIA+yukJB1QyMEapeXe8g5IYcBqO46wmb+mV1m3qSihr3601kA2n/ikRzNq2QY/x2h0S/hMnGISN+Cesb9XuzU+pINOyGJrpoVNy/x4AboCgGeQoL7RZgFu038s7kA0D8VPtm67yxu1oGOG1q7oqihGHYSpjfXIc7LyQc=
