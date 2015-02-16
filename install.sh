@@ -14,7 +14,8 @@ echo "* Check Ruby..."
 
 if [ ! $(which ruby) ]; then
     echo "- Ruby is not found."
-    echo "You need to install Ruby"
+    echo "You need to install Ruby at first."
+    exit 1
 fi
 
 echo "+ Ruby is found."
