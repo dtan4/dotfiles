@@ -16,6 +16,7 @@
 	cm = commit -m
 	cam = commit --amend -m
 	can = commit --amend --no-edit
+	cem = commit --allow-empty -m
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 	plom = pull origin master
