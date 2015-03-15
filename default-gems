@@ -1,4 +1,3 @@
 bundler
 pry
 pry-byebug
-pry-power_assert
