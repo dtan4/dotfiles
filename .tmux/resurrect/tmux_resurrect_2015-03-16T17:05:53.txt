@@ -1,0 +1,3 @@
+pane	0	0	:zsh/dotfiles	1	:*	0	:/Users/fujita/git/dotfiles	1	zsh	:
+window	0	0	1	:*	b47d,169x41,0,0,0
+state	0	
