@@ -1,4 +1,4 @@
-SYMLINKS_EXCLUDE = %w(. .. .git .gitmodules Rakefile .xinitrc .travis.yml README.md default-gems Makefile install.sh .muttrc.sample)
+SYMLINKS_EXCLUDE = %w(. .. .git .gitmodules Rakefile .xinitrc .travis.yml README.md default-gems Makefile install.sh .muttrc.sample script)
 LINUX_ONLY = %w(.conkyrc .Xresources)
 MAC_ONLY = %w(.tmux-Darwin.conf)
 
