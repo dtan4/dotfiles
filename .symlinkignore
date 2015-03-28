@@ -4,9 +4,7 @@
 .symlinkignore
 .travis.yml
 .xinitrc
-Brewfile
-Brewfile.cask
-Brewfile.cask.once
+brewfiles
 default-gems
 Makefile
 Rakefile
