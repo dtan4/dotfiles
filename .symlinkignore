@@ -1,0 +1,11 @@
+.git
+.gitmodules
+.muttrc.sample
+.symlinkignore
+.travis.yml
+.xinitrc
+default-gems
+Makefile
+Rakefile
+README.md
+script

@@ -1,4 +1,3 @@
-SYMLINKS_EXCLUDE = %w(. .. .git .gitmodules Rakefile .xinitrc .travis.yml README.md default-gems Makefile install.sh .muttrc.sample script)
 LINUX_ONLY = %w(.conkyrc .Xresources)
 MAC_ONLY = %w(.tmux-Darwin.conf)
 
@@ -43,9 +42,11 @@ end
 desc "Create symlinks"
 task :symlink do
   uname = `uname`.strip
+  symlink_ignore = open(File.join(Dir.pwd, ".symlinkignore")).read.split("\n")
 
   Dir.glob("*", File::FNM_DOTMATCH) do |file|
-    next if SYMLINKS_EXCLUDE.include?(file)
+    next if %w(. ..).include?(file)
+    next if symlink_ignore.include?(file)
     next if (uname != "Darwin") && MAC_ONLY.include?(file)
     next if (uname != "Linux") && LINUX_ONLY.include?(file)
 
