@@ -15,6 +15,13 @@ RBENV_PLUGINS = {
 
 task default: "update"
 
+desc "Clean up .vim/bundle"
+task :clean do
+  Dir.glob(".vim/bundle/*") do |dir|
+    rm_r dir unless /neobundle\.vim\z/ =~ dir
+  end
+end
+
 desc "Install dotfiles"
 task :install => [
   "submodule:init",
@@ -22,22 +29,6 @@ task :install => [
   "install:homebrew",
   "symlink"
 ] do
-end
-
-desc "Update dotfiles"
-task :update => [
-  "submodule:update",
-  "install:anyenv_plugins",
-  "install:rbenv_plugins",
-  "symlink"
-] do
-end
-
-desc "Clean up .vim/bundle"
-task :clean do
-  Dir.glob(".vim/bundle/*") do |dir|
-    rm_r dir unless /neobundle\.vim\z/ =~ dir
-  end
 end
 
 desc "Create symlinks"
@@ -60,17 +51,13 @@ task :symlink do
   end
 end
 
-namespace :submodule do
-  desc "Install submodules"
-  task :init do
-    sh %(git submodule update --init)
-  end
-
-  desc "Update submodules"
-  task :update do
-    Dir.chdir(File.join(Dir.pwd, ".vim", "bundle", "neobundle.vim"))
-    sh %(git pull origin master)
-  end
+desc "Update dotfiles"
+task :update => [
+  "submodule:update",
+  "install:anyenv_plugins",
+  "install:rbenv_plugins",
+  "symlink"
+] do
 end
 
 namespace :install do
@@ -133,6 +120,19 @@ namespace :install do
     target = File.join(ANYENV_DIR, "envs", "rbenv", "default-gems")
 
     ln_s(source, target) unless File.exist?(target)
+  end
+end
+
+namespace :submodule do
+  desc "Install submodules"
+  task :init do
+    sh %(git submodule update --init)
+  end
+
+  desc "Update submodules"
+  task :update do
+    Dir.chdir(File.join(Dir.pwd, ".vim", "bundle", "neobundle.vim"))
+    sh %(git pull origin master)
   end
 end
 
