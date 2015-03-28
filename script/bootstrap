@@ -7,6 +7,7 @@ echo "          / __  / __ \/ __/ /_/ / / _ \/ ___/         "
 echo "         / /_/ / /_/ / /_/ __/ / /  __(__  )          "
 echo "         \__,_/\____/\__/_/ /_/_/\___/____/           "
 echo "                                             by @dtan4"
+echo "                             github.com/dtan4/dotfiles"
 echo "                                                      "
 echo "                                                      "
 
@@ -25,4 +26,6 @@ echo ""
 
 echo "* Install dotfiles..."
 rake install
-echo "+ Finish."
+
+echo ""
+echo "+ Finish!"
