@@ -105,8 +105,9 @@ namespace :install do
 
   desc "Install Homebrew"
   task :homebrew do
-    exit if File.exists?("/usr/local/bin/brew")
-    sh %(ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
+    if `uname`.strip == "Darwin" && !File.exists?("/usr/local/bin/brew")
+      sh %(ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
+    end
   end
 
   desc "Install ndenv"
