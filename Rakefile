@@ -19,6 +19,7 @@ desc "Install dotfiles"
 task :install => [
   "submodule:init",
   "install:anyenv",
+  "install:homebrew",
   "symlink"
 ] do
 end
@@ -95,6 +96,12 @@ namespace :install do
 
       clone_from_github(repository, plugin_dir)
     end
+  end
+
+  desc "Install Homebrew"
+  task :homebrew do
+    exit if File.exists?("/usr/local/bin/brew")
+    sh %(ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
   end
 
   desc "Install ndenv"
