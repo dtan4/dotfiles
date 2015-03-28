@@ -1,0 +1,8 @@
+install caskroom/cask/brew-cask || true
+
+cask install intel-haxm || true
+cask install java || true
+cask install vagrant || true
+cask install virtualbox || true
+
+cleanup

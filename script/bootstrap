@@ -1,5 +1,8 @@
 #!/bin/bash
 
+install_emacs_d=true
+install_zsh_d=true
+
 echo "                                                      "
 echo "                __      __  _____ __                  "
 echo "           ____/ /___  / /_/ __(_) /__  _____         "
@@ -11,6 +14,7 @@ echo "                             github.com/dtan4/dotfiles"
 echo "                                                      "
 echo "                                                      "
 
+echo ""
 echo "* Check Ruby..."
 
 if [ ! $(which ruby) ]; then
@@ -23,8 +27,7 @@ echo "+ Ruby is found."
 echo "    version: $(ruby -v)"
 
 echo ""
-
-echo "* Install dotfiles..."
+echo "* Installing dotfiles..."
 rake install
 
 echo ""
