@@ -22,6 +22,7 @@
 	plom = pull origin master
 	puom = push -u origin master
 	phom = push heroku master
+	pr = !hub browse -- compare/$(git symbolic-ref --short HEAD)'?'expand=1
 [include]
 	path = ~/.gitconfig.local
 [help]
