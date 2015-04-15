@@ -37,9 +37,8 @@
 	quotepath = false
 	excludesfile = ~/.gitignore
 [ghq]
-	root = ~/.ghq
-	root = ~/git
 	root = ~/.go/src
+	root = ~/git
 [ghq "https://github.com/"]
 	vcs = git
 [url "git@github.com:"]
