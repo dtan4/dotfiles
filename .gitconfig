@@ -19,7 +19,7 @@
 	cem = commit --allow-empty -m
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
-	plom = pull origin master
+	plom = !git checkout master && git pull origin master
 	puom = push -u origin master
 	phom = push heroku master
 	pr = !hub browse -- compare/$(git symbolic-ref --short HEAD)'?'expand=1
