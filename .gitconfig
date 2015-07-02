@@ -6,6 +6,7 @@
 	diff = true
 [alias]
 	br = branch
+	cb = rev-parse --abbrev-ref HEAD
 	co = checkout
 	gp = grep --color=auto -n
 	lg = log --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(white)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches
@@ -19,9 +20,13 @@
 	cem = commit --allow-empty -m
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+	ploc = !git pull origin $(git cb)
 	plom = !git checkout master && git pull origin master
-	puom = push -u origin master
-	phom = push heroku master
+	puoc = !git push -u origin $(git cb)
+	pudc = !git push dtan4 $(git cb)
+	pudm = !git checkout master && git push dtan4 master
+	puom = !git checkout master && git push -u origin master
+	phom = !git checkout master && git push heroku master
 	pr = !hub browse -- compare/$(git symbolic-ref --short HEAD)'?'expand=1
 [include]
 	path = ~/.gitconfig.local
