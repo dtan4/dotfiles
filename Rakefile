@@ -45,9 +45,9 @@ task :symlink do
     source = File.join(Dir.pwd, file)
     target = File.join(ENV["HOME"], file)
 
-    next if File.exists?(target) || Dir.exists?(target)
+    File.delete(target) if Dir.exist?(source) && File.exist?(target)
 
-    ln_s(source, target)
+    ln_sf(source, target)
   end
 end
 
