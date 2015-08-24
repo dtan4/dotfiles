@@ -14,6 +14,7 @@
 	df = diff
 	cdf = diff --cached
 	st = status --short --branch
+	bc = !"_bc() { hub browse -- commit/$@ ;}; _bc"
 	cm = commit -m
 	cam = commit --amend -m
 	can = commit --amend --no-edit
