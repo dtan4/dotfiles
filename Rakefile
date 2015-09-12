@@ -88,7 +88,7 @@ namespace :install do
 
     Rake::Task["install:anyenv_plugins"].invoke
 
-    %w(rbenv plenv ndenv).each do |env|
+    %w(crenv ndenv plenv rbenv).each do |env|
       Rake::Task["install:#{env}"].invoke
     end
   end
@@ -108,6 +108,11 @@ namespace :install do
     if `uname`.strip == "Darwin" && !File.exists?("/usr/local/bin/brew")
       sh %(ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
     end
+  end
+
+  desc "Install crenv"
+  task :crenv do
+    install_env("crenv")
   end
 
   desc "Install ndenv"
