@@ -13,6 +13,9 @@ install boot2docker || true
 install colordiff || true
 install ctags || true
 install direnv || true
+install docker-compose || true
+install docker-machine || true
+install docker-swarm || true
 install emacs-mac --icon-official || true
 install fontforge || true
 install ghq || true
