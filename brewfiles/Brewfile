@@ -17,6 +17,7 @@ install docker-compose || true
 install docker-machine || true
 install docker-swarm || true
 install emacs-mac --icon-official || true
+install fleetctl || true
 install fontforge || true
 install ghq || true
 install ghostscript || true
