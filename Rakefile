@@ -155,8 +155,11 @@ namespace :submodule do
 
   desc "Update submodules"
   task :update do
-    Dir.chdir(File.join(Dir.pwd, ".vim", "bundle", "neobundle.vim"))
-    sh %(git pull origin master)
+    submodules.each do |submodule|
+      Dir.chdir(File.join(Dir.pwd, submodule)) do
+        sh %(git pull origin master)
+      end
+    end
   end
 end
 
@@ -176,4 +179,15 @@ end
 
 def install_env(env)
   sh %(#{anyenv} install #{env}) unless env_installed?(env)
+end
+
+
+#
+# $ git submodule
+#  f75ba16d5f8276b6f8d08b73f0e2e35a40719251 .tmux/plugins/tpm (v1.2.2-85-gf75ba16)
+#  e7c1e4122b1d1ec1841256abeb7999758aaa9fca .vim/bundle/neobundle.vim (ver.3.2-30-ge7c1e41)
+#                                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+#
+def submodules
+  `git submodule`.lines.map { |line| line.split(" ")[1] }
 end
