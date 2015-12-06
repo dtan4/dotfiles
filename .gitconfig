@@ -19,6 +19,7 @@
 	cam = commit --amend -m
 	can = commit --amend --no-edit
 	cem = commit --allow-empty -m
+	fpr = fetch origin +refs/pull/*:refs/remotes/pull/*
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 	ploc = !git pull origin $(git cb)
