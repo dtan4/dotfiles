@@ -23,6 +23,7 @@
 	fpr = fetch origin +refs/pull/*:refs/remotes/pull/*
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+	openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
 	ploc = !git pull origin $(git cb)
 	plom = !git checkout master && git pull origin master
 	puoc = !git push -u origin $(git cb)
