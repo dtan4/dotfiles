@@ -53,3 +53,5 @@
 	insteadOf = https://github.com/
 [diff]
 	renames = true
+[github]
+	user = dtan4
