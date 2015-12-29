@@ -1,5 +1,5 @@
 LINUX_ONLY = %w(.conkyrc .Xresources)
-MAC_ONLY = %w(.tmux-Darwin.conf .bundle)
+MAC_ONLY = %w(.tmux-Darwin.conf)
 
 ANYENV_DIR = File.join(ENV["HOME"], ".anyenv")
 
