@@ -1,1 +1,1 @@
--T --skip-bundle
+-d postgresql -T --skip-bundle
