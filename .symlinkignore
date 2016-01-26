@@ -5,7 +5,6 @@
 .travis.yml
 .xinitrc
 brewfiles
-default-gems
 Makefile
 Rakefile
 README.md
