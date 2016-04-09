@@ -9,13 +9,9 @@ tap sanemat/font
 install ant || true
 install apple-gcc4.2 || true
 install aspell --with-lang-en || true
-install boot2docker || true
 install colordiff || true
 install ctags || true
 install direnv || true
-install docker-compose || true
-install docker-machine || true
-install docker-swarm || true
 install emacs-mac --icon-official || true
 install fleetctl || true
 install fontforge || true
