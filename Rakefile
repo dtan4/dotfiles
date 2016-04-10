@@ -27,6 +27,7 @@ task :install => [
   "submodule:init",
   "install:anyenv",
   "install:homebrew",
+  "install:envchain",
   "symlink"
 ] do
 end
@@ -174,6 +175,11 @@ namespace :install do
     target = File.join(ANYENV_DIR, "envs", "rbenv", "default-gems")
 
     ln_s(source, target) unless File.exist?(target)
+  end
+
+  desc "Install envchain"
+  task :envchain do
+    sh %(brew install https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb)
   end
 end
 
