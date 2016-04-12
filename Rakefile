@@ -181,6 +181,16 @@ namespace :install do
   task :envchain do
     sh %(brew install https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb)
   end
+
+  desc "Install golang toolchain"
+  task "gotools" do
+    %w(
+      github.com/nsf/gocode
+      golang.org/x/tools/cmd/godoc
+    ).each do |tool|
+      sh %(go get #{tool})
+    end
+  end
 end
 
 private
