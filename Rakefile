@@ -186,6 +186,7 @@ namespace :install do
   task "gotools" do
     %w(
       github.com/nsf/gocode
+      github.com/rogpeppe/godef
       golang.org/x/tools/cmd/godoc
     ).each do |tool|
       sh %(go get #{tool})
