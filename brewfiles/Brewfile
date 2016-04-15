@@ -18,7 +18,6 @@ install go || true
 install gradle
 install graphicsmagick || true
 install graphviz || true
-install heroku-toolbelt || true
 install hub || true
 install imagemagick || true
 install jq || true
