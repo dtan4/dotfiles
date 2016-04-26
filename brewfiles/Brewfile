@@ -50,6 +50,7 @@ install tmux-cssh || true
 install tree || true
 install vim || true
 install w3m || true
+install watch || true
 install wget || true
 install zsh || true
 
