@@ -18,6 +18,7 @@ install go || true
 install gradle
 install graphicsmagick || true
 install graphviz || true
+install httpie || true
 install hub || true
 install imagemagick || true
 install jq || true
