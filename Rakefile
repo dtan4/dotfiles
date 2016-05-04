@@ -34,14 +34,13 @@ end
 
 desc "Create symlinks"
 task :symlink do
-  uname = `uname`.strip
   symlink_ignore = open(File.join(Dir.pwd, ".symlinkignore")).read.split("\n")
 
   Dir.glob("*", File::FNM_DOTMATCH) do |file|
     next if %w(. ..).include?(file)
     next if symlink_ignore.include?(file)
-    next if (uname != "Darwin") && MAC_ONLY.include?(file)
-    next if (uname != "Linux") && LINUX_ONLY.include?(file)
+    next if darwin? && MAC_ONLY.include?(file)
+    next if linux? && LINUX_ONLY.include?(file)
 
     source = File.join(Dir.pwd, file)
     target = File.join(ENV["HOME"], file)
@@ -82,7 +81,7 @@ end
 namespace :homebrew do
   desc "Install Homwbrew"
   task :install do
-    if `uname`.strip == "Darwin" && !File.exists?("/usr/local/bin/brew")
+    if darwin? && !File.exists?("/usr/local/bin/brew")
       sh %(ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
     end
   end
@@ -204,12 +203,24 @@ def clone_from_github(repository, target_dir)
   sh %(git clone --recursive https://github.com/#{repository}.git #{target_dir})
 end
 
+def darwin?
+  uname == "Darwin"
+end
+
 def env_installed?(env)
   `#{anyenv} envs`.split("\n").include?(env)
 end
 
 def install_env(env)
   sh %(#{anyenv} install #{env}) unless env_installed?(env)
+end
+
+def linux?
+  uname == "Linux"
+end
+
+def uname
+  `uname`.strip
 end
 
 
