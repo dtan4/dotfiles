@@ -1,4 +1,7 @@
 language: bash
+os:
+  - linux
+  - osx
 script:
   rake install
 notifications:
