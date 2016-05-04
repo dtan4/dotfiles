@@ -178,7 +178,9 @@ namespace :install do
 
   desc "Install envchain"
   task :envchain do
-    sh %(brew install https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb)
+    if darwin? && !File.exists?("/usr/local/bin/envchain")
+      sh %(brew install https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb)
+    end
   end
 
   desc "Install golang toolchain"
