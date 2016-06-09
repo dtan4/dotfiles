@@ -36,3 +36,5 @@ tramp
 TAGS
 GTAGS
 .muttrc
+
+.bundle/cache
