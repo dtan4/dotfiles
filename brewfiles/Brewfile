@@ -3,6 +3,7 @@ tap sanemat/font
 
 install aspell --with-lang-en || true
 install awscli || true
+install cmigemo || true
 install colordiff || true
 install ctags || true
 install direnv || true
