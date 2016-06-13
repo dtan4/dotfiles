@@ -7,7 +7,7 @@ install cmigemo || true
 install colordiff || true
 install ctags || true
 install direnv || true
-install emacs-mac --icon-official || true
+install emacs-mac --with-gnutls --with-official-icon || true
 install fontforge || true
 install ghq || true
 install ghostscript || true
