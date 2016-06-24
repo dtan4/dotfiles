@@ -78,37 +78,6 @@ namespace :clean do
   end
 end
 
-namespace :homebrew do
-  desc "Install Homwbrew"
-  task :install do
-    if darwin? && !File.exists?("/usr/local/bin/brew")
-      sh %(ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
-    end
-  end
-
-  desc "Install tools from Brewfile"
-  task :bundle do
-    brewfile = open(File.join(Dir.pwd, 'brewfiles', 'Brewfile')).read
-    brewfile.lines.reject { |line| line.strip.empty? }.each { |line| sh "brew #{line.strip}" }
-  end
-end
-
-namespace :submodule do
-  desc "Install submodules"
-  task :init do
-    sh %(git submodule update --init)
-  end
-
-  desc "Update submodules"
-  task :update do
-    submodules.each do |submodule|
-      Dir.chdir(File.join(Dir.pwd, submodule)) do
-        sh %(git pull origin master)
-      end
-    end
-  end
-end
-
 namespace :install do
   desc "Install anyenv"
   task :anyenv do

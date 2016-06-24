@@ -1,60 +1,60 @@
 tap railwaycat/emacsmacport
 tap sanemat/font
 
-install aspell --with-lang-en || true
-install awscli || true
-install cmigemo || true
-install colordiff || true
-install ctags || true
-install direnv || true
-install emacs-mac --with-gnutls --with-official-icon || true
-install fontforge || true
-install ghq || true
-install ghostscript || true
-install git || true
-install global || true
-install gnuplot || true
-install gnu-sed || true
-install go || true
+install aspell --with-lang-en
+install awscli
+install cmigemo
+install colordiff
+install ctags
+install direnv
+install emacs-mac --with-gnutls --with-official-icon
+install fontforge
+install ghq
+install ghostscript
+install git
+install global
+install gnuplot
+install gnu-sed
+install go
 install gradle
-install graphicsmagick || true
-install graphviz || true
-install httpie || true
-install hub || true
-install imagemagick || true
-install jo || true
-install jq || true
-install markdown || true
-install mecab || true
-install mecab-ipadic || true
-install memcached || true
-install mercurial || true
-install mongodb || true
-install mysql || true
-install nginx || true
-install nkf || true
-install openssl || true
-install peco || true
-install phantomjs || true
-install plantuml || true
-install readline || true
-install reattach-to-user-namespace || true
-install redis || true
-install ricty --powerline --vim-powerline || true
-install rlwrap || true
-install source-highlight || true
-install sqlite || true
-install ssh-copy-id || true
-install terminal-notifier || true
-install the_silver_searcher || true
-install tig || true
-install tmux || true
-install tmux-cssh || true
-install tree || true
-install vim || true
-install w3m || true
-install watch || true
-install wget || true
-install zsh || true
+install graphicsmagick
+install graphviz
+install httpie
+install hub
+install imagemagick
+install jo
+install jq
+install markdown
+install mecab
+install mecab-ipadic
+install memcached
+install mercurial
+install mongodb
+install mysql
+install nginx
+install nkf
+install openssl
+install peco
+install phantomjs
+install plantuml
+install readline
+install reattach-to-user-namespace
+install redis
+install ricty --powerline --vim-powerline
+install rlwrap
+install source-highlight
+install sqlite
+install ssh-copy-id
+install terminal-notifier
+install the_silver_searcher
+install tig
+install tmux
+install tmux-cssh
+install tree
+install vim
+install w3m
+install watch
+install wget
+install zsh
 
 cleanup
