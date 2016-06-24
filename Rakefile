@@ -60,19 +60,6 @@ namespace :clean do
   end
 end
 
-namespace :install do
-  desc "Install golang toolchain"
-  task "gotools" do
-    %w(
-      github.com/nsf/gocode
-      github.com/rogpeppe/godef
-      golang.org/x/tools/cmd/godoc
-    ).each do |tool|
-      sh %(go get #{tool})
-    end
-  end
-end
-
 private
 
 def clone_from_github(repository, target_dir)

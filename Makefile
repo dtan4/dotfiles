@@ -8,6 +8,8 @@ ANYENV_PLUGINS := znz/anyenv-update
 
 RBENV_PLUGINS := amatsuda/gem-src sstephenson/rbenv-default-gems sstephenson/rbenv-gem-rehash
 
+GOTOOLS := github.com/nsf/gocode github.com/rogpeppe/godef golang.org/x/tools/cmd/godoc
+
 .PHONY: anyenv
 anyenv:
 ifeq ("$(wildcard $(ANYENV_DIR))", "")
@@ -62,6 +64,12 @@ ifeq ("$(wildcard /usr/local/bin/envchain)","")
 	brew install "https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb"
 endif
 endif
+
+.PHONY: gotools
+gotools:
+	@for gotool in $(GOTOOLS); do \
+		go get -u -v $$gotool; \
+	done
 
 .PHONY: homebrew
 homebrew:
