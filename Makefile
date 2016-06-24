@@ -55,11 +55,19 @@ ifeq ("$(wildcard $(ANYENV_DIR)/envs/rbenv)", "")
 	ln -sf $(PWD)/default-gems $(ANYENV_DIR)/envs/rbenv/default-gems
 endif
 
-.PHONY: homebrew-install
-homebrew-install:
+.PHONY: envchain
+envchain: homebrew
+ifeq ($(UNAME),Darwin)
+ifeq ("$(wildcard /usr/local/bin/envchain)","")
+	brew install "https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb"
+endif
+endif
+
+.PHONY: homebrew
+homebrew:
 ifeq ($(UNAME),Darwin)
 ifeq ("$(wildcard /usr/local/bin/brew)","")
-	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 endif
 endif
 
