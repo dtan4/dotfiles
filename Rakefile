@@ -17,25 +17,6 @@ task :install => [
 ] do
 end
 
-desc "Create symlinks"
-task :symlink do
-  symlink_ignore = open(File.join(Dir.pwd, ".symlinkignore")).read.split("\n")
-
-  Dir.glob("*", File::FNM_DOTMATCH) do |file|
-    next if %w(. ..).include?(file)
-    next if symlink_ignore.include?(file)
-    next if darwin? && MAC_ONLY.include?(file)
-    next if linux? && LINUX_ONLY.include?(file)
-
-    source = File.join(Dir.pwd, file)
-    target = File.join(ENV["HOME"], file)
-
-    File.delete(target) if Dir.exist?(source) && File.exist?(target)
-
-    ln_sf(source, target)
-  end
-end
-
 desc "Update dotfiles"
 task :update => [
   "symlink"

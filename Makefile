@@ -10,6 +10,13 @@ RBENV_PLUGINS := amatsuda/gem-src sstephenson/rbenv-default-gems sstephenson/rbe
 
 GOTOOLS := github.com/nsf/gocode github.com/rogpeppe/godef golang.org/x/tools/cmd/godoc
 
+DOTFILES = $(shell git ls-tree --name-only HEAD)
+
+SYMLINK_LINUX_ONLY := .conkyrc .Xresources
+SYMLINK_MAC_ONLY := .tmux-Darwin.conf
+SYMLINKIGNORE := .symlinkignore
+SYMLINK_IGNORE_FILES := $(shell cat $(SYMLINKIGNORE))
+
 .PHONY: anyenv
 anyenv:
 ifeq ("$(wildcard $(ANYENV_DIR))", "")
@@ -98,4 +105,18 @@ submodule-update:
 		cd $$submodule; \
 		git pull origin master;\
 	)\
+	done
+
+.PHONY: symlink
+symlink:
+	@for file in $(DOTFILES); do \
+		if [ -n "`grep $$file $(SYMLINKIGNORE)`" ]; then \
+			continue; \
+		fi; \
+		if [ $(UNAME) = "Linux" -a $(SYMLINK_MAC_ONLY) = *"$$file"* ]; then \
+			continue; \
+		fi; \
+		if [ ! -e $(HOME)/$$file ]; then \
+			ln -sf $(PWD)/$$file $(HOME)/$$file; \
+		fi; \
 	done
