@@ -30,7 +30,7 @@ ifeq ("$(wildcard $(ANYENV_DIR))", "")
 	@for plugin in $(RBENV_PLUGINS); do \
 	(\
 		cd $(ANYENV_DIR)/plugins; \
-		if [[ ! -d $$(basename $$plugin) ]]; then \
+		if [ ! -d "$$(basename $$plugin)" ]; then \
 			$(GIT_CLONE) https://github.com/$$plugin.git; \
 		fi; \
 	)\
@@ -63,7 +63,7 @@ ifeq ("$(wildcard $(ANYENV_DIR)/envs/rbenv)", "")
 	@for plugin in $(RBENV_PLUGINS); do \
 	(\
 		cd $(ANYENV_DIR)/envs/rbenv/plugins; \
-		if [[ ! -d $$(basename $$plugin) ]]; then \
+		if [ ! -d "$$(basename $$plugin)" ]; then \
 			$(GIT_CLONE) https://github.com/$$plugin.git; \
 		fi; \
 	)\
@@ -96,11 +96,13 @@ endif
 
 .PHONY: homebrew-bundle
 homebrew-bundle:
+ifeq ($(UNAME),Darwin)
 	@while read -r line; do \
-		if [[ ! -z $$line ]]; then\
+		if [ ! -z "$$line" ]; then\
 			brew $$line || true; \
 		fi; \
 	done < $(PWD)/brewfiles/Brewfile
+endif
 
 .PHONY: install
 install: submodule-init submodule-update symlink homebrew homebrew-bundle envchain gotools anyenv crenv ndenv rbenv plenv
