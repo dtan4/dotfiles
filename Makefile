@@ -120,3 +120,11 @@ symlink:
 			ln -sf $(PWD)/$$file $(HOME)/$$file; \
 		fi; \
 	done
+
+.PHONY: clean-symlink
+clean-symlink:
+	@for file in $(DOTFILES); do \
+		if [ -e $(HOME)/$$file ]; then \
+			rm -r $(HOME)/$$file; \
+		fi; \
+	done

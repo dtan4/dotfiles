@@ -24,15 +24,6 @@ task :update => [
 end
 
 namespace :clean do
-  desc "Clean up symlinks"
-  task :symlink do
-    Dir.glob("*", File::FNM_DOTMATCH) do |file|
-      next if %w(. ..).include?(file)
-      target = File.join(ENV["HOME"], file)
-      rm_r(target) if File.exists?(target) || Dir.exists?(target)
-    end
-  end
-
   desc "Clean up vim plugins"
   task :vim_plugin do
     Dir.glob(".vim/bundle/*") do |dir|
