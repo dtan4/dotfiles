@@ -23,15 +23,6 @@ task :update => [
 ] do
 end
 
-namespace :clean do
-  desc "Clean up vim plugins"
-  task :vim_plugin do
-    Dir.glob(".vim/bundle/*") do |dir|
-      rm_r dir unless /neobundle\.vim\z/ =~ dir
-    end
-  end
-end
-
 private
 
 def clone_from_github(repository, target_dir)

@@ -17,6 +17,10 @@ SYMLINK_MAC_ONLY := .tmux-Darwin.conf
 SYMLINKIGNORE := .symlinkignore
 SYMLINK_IGNORE_FILES := $(shell cat $(SYMLINKIGNORE))
 
+VIM_PLUGINS = $(shell find .vim/bundle -type d -depth 1 | grep -v neobundle.vim)
+
+.DEFAULT_GOAL := install
+
 .PHONY: anyenv
 anyenv:
 ifeq ("$(wildcard $(ANYENV_DIR))", "")
@@ -98,6 +102,9 @@ homebrew-bundle:
 		fi; \
 	done < $(PWD)/brewfiles/Brewfile
 
+.PHONY: install
+install: submodule-init submodule-update symlink homebrew homebrew-bundle envchain gotools anyenv crenv ndenv rbenv plenv
+
 .PHONY: submodule-init
 submodule-init:
 	git submodule update --init
@@ -125,10 +132,19 @@ symlink:
 		fi; \
 	done
 
+.PHONY: clean
+clean: clean-symlink clean-vimplugins
+
 .PHONY: clean-symlink
 clean-symlink:
 	@for file in $(DOTFILES); do \
 		if [ -e $(HOME)/$$file ]; then \
 			rm -r $(HOME)/$$file; \
 		fi; \
+	done
+
+.PHONY: clean-vimplugins
+clean-vimplugins:
+	@for plugin in $(VIM_PLUGINS); do \
+		rm -r $$plugin; \
 	done
