@@ -1,8 +1,6 @@
-language: bash
-install:
-  - add-apt-repository ppa:ubuntu-lxc/lxd-stable
-  - apt-get update
-  - apt-get install -y golang
+language: go
+go:
+  - 1.6
 script:
   make
 notifications:
