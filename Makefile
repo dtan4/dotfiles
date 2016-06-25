@@ -58,6 +58,10 @@ endif
 .PHONY: rbenv
 rbenv:
 ifeq ("$(wildcard $(ANYENV_DIR)/envs/rbenv)", "")
+ifeq ($(UNAME),"Linux")
+	sudo apt-get update
+	sudo apt-get install -y libreadline-dev libssl-dev zlib1g-dev
+endif
 	anyenv install rbenv -v
 
 	@for plugin in $(RBENV_PLUGINS); do \
