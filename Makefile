@@ -33,21 +33,25 @@ ifeq ("$(wildcard $(ANYENV_DIR))", "")
 	done
 endif
 
+.PHONY: crenv
 crenv:
 ifeq ("$(wildcard $(ANYENV_DIR)/envs/crenv)", "")
 	anyenv install crenv -v
 endif
 
+.PHONY: ndenv
 ndenv:
 ifeq ("$(wildcard $(ANYENV_DIR)/envs/ndenv)", "")
 	anyenv install ndenv -v
 endif
 
+.PHONY: plenv
 plenv:
 ifeq ("$(wildcard $(ANYENV_DIR)/envs/plenv)", "")
 	anyenv install plenv -v
 endif
 
+.PHONY: rbenv
 rbenv:
 ifeq ("$(wildcard $(ANYENV_DIR)/envs/rbenv)", "")
 	anyenv install rbenv -v
