@@ -4,6 +4,7 @@ UNAME := $(shell uname)
 GIT_CLONE := git clone --recursive
 
 ANYENV_DIR := $(HOME)/.anyenv
+ANYENV := $(ANYENV_DIR)/bin/anyenv
 ANYENV_PLUGINS := znz/anyenv-update
 
 RBENV_PLUGINS := amatsuda/gem-src sstephenson/rbenv-default-gems sstephenson/rbenv-gem-rehash
@@ -25,7 +26,7 @@ VIM_PLUGINS = $(shell find .vim/bundle -type d -depth 1 | grep -v neobundle.vim)
 anyenv:
 ifeq ("$(wildcard $(ANYENV_DIR))", "")
 	$(GIT_CLONE) "https://github.com/riywo/anyenv.git" $(ANYENV_DIR)
-	$(ANYENV_DIR)/bin/anyenv init -
+	$(ANYENV) init -
 
 	@for plugin in $(RBENV_PLUGINS); do \
 	(\
@@ -40,19 +41,19 @@ endif
 .PHONY: crenv
 crenv:
 ifeq ("$(wildcard $(ANYENV_DIR)/envs/crenv)", "")
-	anyenv install crenv -v
+	$(ANYENV) install crenv -v
 endif
 
 .PHONY: ndenv
 ndenv:
 ifeq ("$(wildcard $(ANYENV_DIR)/envs/ndenv)", "")
-	anyenv install ndenv -v
+	$(ANYENV) install ndenv -v
 endif
 
 .PHONY: plenv
 plenv:
 ifeq ("$(wildcard $(ANYENV_DIR)/envs/plenv)", "")
-	anyenv install plenv -v
+	$(ANYENV) install plenv -v
 endif
 
 .PHONY: rbenv
@@ -62,7 +63,7 @@ ifeq ($(UNAME),"Linux")
 	sudo apt-get update
 	sudo apt-get install -y libreadline-dev libssl-dev zlib1g-dev
 endif
-	anyenv install rbenv -v
+	$(ANYENV) install rbenv -v
 
 	@for plugin in $(RBENV_PLUGINS); do \
 	(\
