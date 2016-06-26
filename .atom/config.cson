@@ -1,4 +1,7 @@
 "*":
+  editor:
+    fontFamily: "Ricty"
+    fontSize: 12
   "exception-reporting":
     userId: "42c318b0-cdfe-fdee-68ef-b68e61e20d55"
   welcome:
