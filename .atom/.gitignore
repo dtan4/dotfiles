@@ -1,0 +1,8 @@
+.apm/
+.node-gyp/
+compile-cache/
+npm-debug.log
+packages/
+projects.cson
+storage/
+blob-store/
