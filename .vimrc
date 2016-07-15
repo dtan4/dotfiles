@@ -173,3 +173,5 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
 let g:indent_guides_color_change_percent = 30
 let g:indent_guides_guide_size = 1
+
+autocmd InsertLeave * set nopaste
