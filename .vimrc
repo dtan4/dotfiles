@@ -39,6 +39,7 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 
