@@ -9,3 +9,6 @@ color diff-stat cyan default
 bind main G !@hub browse -- commit/%(commit)
 bind diff G !@hub browse -- commit/%(commit)
 bind blame G !@hub browse -- commit/%(commit)
+
+# http://qiita.com/yoshikazusawa/items/d99e8b5d6f6a45aa6e2e
+set main-view = id date author commit-title:graph=yes,refs=yes
