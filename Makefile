@@ -44,10 +44,10 @@ ifeq ("$(wildcard $(ANYENV_DIR)/envs/crenv)", "")
 	$(ANYENV) install crenv -v
 endif
 
-.PHONY: ndenv
-ndenv:
-ifeq ("$(wildcard $(ANYENV_DIR)/envs/ndenv)", "")
-	$(ANYENV) install ndenv -v
+.PHONY: nodenv
+nodenv:
+ifeq ("$(wildcard $(ANYENV_DIR)/envs/nodenv)", "")
+	$(ANYENV) install nodenv -v
 endif
 
 .PHONY: plenv
@@ -110,7 +110,7 @@ ifeq ($(UNAME),Darwin)
 endif
 
 .PHONY: install
-install: submodule-init submodule-update symlink homebrew homebrew-bundle envchain gotools anyenv crenv ndenv rbenv plenv
+install: submodule-init submodule-update symlink homebrew homebrew-bundle envchain gotools anyenv crenv nodenv rbenv plenv
 
 .PHONY: submodule-init
 submodule-init:
