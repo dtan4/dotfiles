@@ -18,7 +18,7 @@ SYMLINK_MAC_ONLY := .tmux-Darwin.conf
 SYMLINKIGNORE := .symlinkignore
 SYMLINK_IGNORE_FILES := $(shell cat $(SYMLINKIGNORE))
 
-VIM_PLUGINS = $(shell find .vim/bundle -type d -depth 1 | grep -v neobundle.vim)
+VIM_PLUGINS = $(shell find dein/repos -type d -depth 3 | grep -v Shougo/dein.vim)
 
 .DEFAULT_GOAL := install
 
@@ -153,5 +153,5 @@ clean-symlink:
 .PHONY: clean-vimplugins
 clean-vimplugins:
 	@for plugin in $(VIM_PLUGINS); do \
-		rm -r $$plugin; \
+		rm -rf $$plugin; \
 	done
