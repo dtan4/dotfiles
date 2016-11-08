@@ -22,14 +22,14 @@ if !has('gui-running')
   set t_Co=256
 endif
 
-let s:dein_dir = expand('./dein')
+let s:dein_dir = expand('~/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 execute 'set runtimepath^=' . s:dein_repo_dir
 
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  let s:toml = expand('./dein.toml')
+  let s:toml = expand('~/dein.toml')
 
   call dein#load_toml(s:toml, {'lazy': 0})
 
