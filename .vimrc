@@ -1,5 +1,4 @@
 colorscheme ron
-syntax on
 set encoding=utf-8
 set fileencoding=utf-8
 set autoindent
@@ -12,50 +11,38 @@ set softtabstop=2
 set shiftwidth=2
 set incsearch
 set hlsearch
-set nocompatible
 set laststatus=2
 set backspace=indent,eol,start
+
+if &compatible
+  set nocompatible
+endif
 
 if !has('gui-running')
   set t_Co=256
 endif
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+let s:dein_dir = expand('./dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+execute 'set runtimepath^=' . s:dein_repo_dir
+
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  let s:toml = expand('./dein.toml')
+
+  call dein#load_toml(s:toml, {'lazy': 0})
+
+  call dein#end()
+  call dein#save_state()
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'rhysd/accelerated-jk'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'fatih/vim-go'
-
-call neobundle#end()
-
 filetype plugin indent on
-NeoBundleCheck
+syntax enable
 
-" let vimproc_updcmd = has('win64') ?
-"       \ 'tools\\update-dll-mingw 64' : 'tools\\update-dll-mingw 32'
-" execute "NeoBundle 'Shougo/vimproc.vim'," . string({
-"       \ 'build' : {
-"       \     'windows' : vimproc_updcmd,
-"       \     'cygwin' : 'make -f make_cygwin.mak',
-"       \     'mac' : 'make -f make_mac.mak',
-"       \     'unix' : 'make -f make_unix.mak',
-"       \    },
-"       \ })
+if dein#check_install()
+  call dein#install()
+endif
 
 highlight clear SignColumn
 

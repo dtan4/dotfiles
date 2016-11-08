@@ -1,6 +1,6 @@
-[submodule ".vim/bundle/neobundle.vim"]
-	path = .vim/bundle/neobundle.vim
-	url = https://github.com/Shougo/neobundle.vim.git
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "dein/repos/github.com/Shougo/dein.vim"]
+	path = dein/repos/github.com/Shougo/dein.vim
+	url = https://github.com/Shougo/dein.vim.git
