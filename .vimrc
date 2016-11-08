@@ -173,3 +173,7 @@ augroup vimrc-auto-mkdir  " {{{
     endif
   endfunction  " }}}
 augroup END  " }}}
+
+" open Capistrano files as Ruby
+autocmd BufNewFile,BufRead Capfile set filetype=ruby
+autocmd BufNewFile,BufRead *.cap set filetype=ruby
