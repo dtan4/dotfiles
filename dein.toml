@@ -11,7 +11,7 @@ repo = 'fatih/vim-go'
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
-repo = 'kien/ctrlp.vim'
+repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
