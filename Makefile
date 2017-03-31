@@ -7,7 +7,7 @@ ANYENV_DIR := $(HOME)/.anyenv
 ANYENV := $(ANYENV_DIR)/bin/anyenv
 ANYENV_PLUGINS := znz/anyenv-update
 
-RBENV_PLUGINS := amatsuda/gem-src sstephenson/rbenv-default-gems sstephenson/rbenv-gem-rehash
+RBENV_PLUGINS := amatsuda/gem-src sstephenson/rbenv-default-gems sstephenson/rbenv-gem-rehash rbenv/rbenv-each
 
 GOTOOLS := github.com/nsf/gocode github.com/rogpeppe/godef golang.org/x/tools/cmd/godoc
 
