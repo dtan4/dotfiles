@@ -54,7 +54,6 @@ install tmux
 install tmux-cssh
 install tree
 install vim
-install w3m
 install watch
 install wget
 install zsh
