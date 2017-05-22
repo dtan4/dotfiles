@@ -13,6 +13,7 @@ install fontforge
 install ghq
 install ghostscript
 install git
+install glide
 install global
 install gnuplot
 install gnu-sed
