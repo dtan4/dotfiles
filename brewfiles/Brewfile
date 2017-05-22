@@ -8,6 +8,7 @@ install colordiff
 install ctags
 install direnv
 install emacs-mac --with-gnutls --with-official-icon
+install envchain
 install fontforge
 install ghq
 install ghostscript
