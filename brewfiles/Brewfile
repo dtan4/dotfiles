@@ -21,6 +21,7 @@ install go
 install gradle
 install graphicsmagick
 install graphviz
+install htop
 install httpie
 install hub
 install imagemagick
@@ -36,6 +37,7 @@ install mysql
 install nginx
 install nkf
 install openssl
+install parallel
 install peco
 install phantomjs
 install plantuml
