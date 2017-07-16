@@ -1,6 +1,7 @@
 [user]
 	name = Daisuke Fujita
 	email = dtanshi45@gmail.com
+	signingkey = D6D4251A62980519
 [color]
 	ui = true
 	diff = true
@@ -56,3 +57,5 @@
 	renames = true
 [github]
 	user = dtan4
+[commit]
+	gpgsign = true
