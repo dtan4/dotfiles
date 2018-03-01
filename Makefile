@@ -68,7 +68,7 @@ endif
 	@for plugin in $(RBENV_PLUGINS); do \
 	(\
 		cd $(ANYENV_DIR)/envs/rbenv/plugins; \
-		if [ ! -d "$$(basename $$plugin)" ]; then \
+		if [[ ! -d "$$(basename $$plugin)" ]]; then \
 			$(GIT_CLONE) https://github.com/$$plugin.git; \
 		fi; \
 	)\
@@ -103,7 +103,7 @@ endif
 homebrew-bundle:
 ifeq ($(UNAME),Darwin)
 	@while read -r line; do \
-		if [ ! -z "$$line" ]; then\
+		if [[ ! -z "$$line" ]]; then\
 			brew $$line || true; \
 		fi; \
 	done < $(PWD)/brewfiles/Brewfile
@@ -128,13 +128,13 @@ submodule-update:
 .PHONY: symlink
 symlink:
 	@for file in $(DOTFILES); do \
-		if [ -n "`grep $$file $(SYMLINKIGNORE)`" ]; then \
+		if [[ -n "`grep $$file $(SYMLINKIGNORE)`" ]]; then \
 			continue; \
 		fi; \
-		if [ $(UNAME) = "Linux" -a $(SYMLINK_MAC_ONLY) = *"$$file"* ]; then \
+		if [[ $(UNAME) = "Linux" && $(SYMLINK_MAC_ONLY) = *"$$file"* ]]; then \
 			continue; \
 		fi; \
-		if [ ! -e $(HOME)/$$file ]; then \
+		if [[ ! -e $(HOME)/$$file ]]; then \
 			ln -sf $(PWD)/$$file $(HOME)/$$file; \
 		fi; \
 	done
@@ -145,7 +145,7 @@ clean: clean-symlink clean-vimplugins
 .PHONY: clean-symlink
 clean-symlink:
 	@for file in $(DOTFILES); do \
-		if [ -e $(HOME)/$$file ]; then \
+		if [[ -e $(HOME)/$$file ]]; then \
 			rm -r $(HOME)/$$file; \
 		fi; \
 	done
