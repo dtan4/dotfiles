@@ -1,3 +1,6 @@
+SHELL := /bin/bash
+.SHELLFLAGS := -euo pipefail
+
 SUBMODULES = $(shell git submodule | awk '{ print $$2 }')
 UNAME := $(shell uname)
 
