@@ -63,4 +63,7 @@ install watch
 install wget
 install zsh
 
+cask install google-cloud-sdk
+cask install minikube
+
 cleanup
