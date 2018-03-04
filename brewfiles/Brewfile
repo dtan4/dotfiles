@@ -6,6 +6,7 @@ install awscli
 install cmigemo
 install colordiff
 install ctags
+install dep
 install direnv
 install emacs-mac --with-gnutls --with-official-icon
 install envchain
