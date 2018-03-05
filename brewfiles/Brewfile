@@ -53,6 +53,7 @@ install source-highlight
 install sqlite
 install ssh-copy-id
 install terminal-notifier
+install terraform
 install the_silver_searcher
 install tig
 install tmux
