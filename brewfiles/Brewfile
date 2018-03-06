@@ -29,6 +29,7 @@ install hub
 install imagemagick
 install jo
 install jq
+install kubernetes-helm
 install markdown
 install mecab
 install mecab-ipadic
