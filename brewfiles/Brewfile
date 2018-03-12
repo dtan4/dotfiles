@@ -67,5 +67,6 @@ install zsh
 
 cask install google-cloud-sdk
 cask install minikube
+cask install ngrok
 
 cleanup
