@@ -37,6 +37,7 @@ install memcached
 install mercurial
 install mongodb
 install mysql
+install nghttp2
 install nginx
 install nkf
 install openssl
