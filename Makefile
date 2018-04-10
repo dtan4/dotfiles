@@ -28,6 +28,17 @@ ifeq ("$(wildcard $(ANYENV_DIR))", "")
 	$(GIT_CLONE) "https://github.com/riywo/anyenv.git" $(ANYENV_DIR)
 	$(ANYENV) init -
 
+	mkdir -p $(ANYENV_DIR)/plugins
+
+	@for plugin in $(ANYENV_PLUGINS); do \
+	(\
+		cd $(ANYENV_DIR)/plugins; \
+		if [ ! -d "$$(basename $$plugin)" ]; then \
+			$(GIT_CLONE) https://github.com/$$plugin.git; \
+		fi; \
+	)\
+	done
+
 	@for plugin in $(RBENV_PLUGINS); do \
 	(\
 		cd $(ANYENV_DIR)/plugins; \
