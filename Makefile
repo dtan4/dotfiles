@@ -38,15 +38,6 @@ ifeq ("$(wildcard $(ANYENV_DIR))", "")
 		fi; \
 	)\
 	done
-
-	@for plugin in $(RBENV_PLUGINS); do \
-	(\
-		cd $(ANYENV_DIR)/plugins; \
-		if [ ! -d "$$(basename $$plugin)" ]; then \
-			$(GIT_CLONE) https://github.com/$$plugin.git; \
-		fi; \
-	)\
-	done
 endif
 
 .PHONY: crenv
