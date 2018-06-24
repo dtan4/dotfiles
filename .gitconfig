@@ -38,10 +38,6 @@
 	path = ~/.gitconfig.local
 [help]
 	autocorrect = 5
-[pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
 [core]
 	editor = vim
 	autocrlf = input
