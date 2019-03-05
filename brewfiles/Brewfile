@@ -43,11 +43,9 @@ install nkf
 install openssl
 install parallel
 install peco
-install phantomjs
 install pinentry-mac
 install plantuml
 install readline
-install reattach-to-user-namespace
 install redis
 install ricty --powerline --vim-powerline
 install rlwrap
