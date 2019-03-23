@@ -1,3 +1,4 @@
+tap golangci/tap
 tap railwaycat/emacsmacport
 tap sanemat/font
 
@@ -19,6 +20,7 @@ install global
 install gnuplot
 install gnu-sed
 install go
+install golangci-lint
 install gpg-agent
 install gradle
 install graphicsmagick
