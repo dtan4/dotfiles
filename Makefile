@@ -9,7 +9,7 @@ ANYENV_PLUGINS := znz/anyenv-update
 
 RBENV_PLUGINS := amatsuda/gem-src sstephenson/rbenv-default-gems sstephenson/rbenv-gem-rehash rbenv/rbenv-each
 
-GOTOOLS := github.com/nsf/gocode github.com/rogpeppe/godef golang.org/x/tools/cmd/godoc
+GOTOOLS := golang.org/x/tools/cmd/godoc
 
 DOTFILES = $(shell git ls-tree --name-only HEAD)
 
