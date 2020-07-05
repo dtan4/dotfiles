@@ -5,6 +5,7 @@
         "C-c": "peco.Cancel",
         "C-g": "peco.Cancel",
         "C-v": "peco.ScrollPageDown",
+        "C-k": "peco.KillEndOfLine",
         "M-v": "peco.ScrollPageUp"
     },
     "Style":{
