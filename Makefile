@@ -10,14 +10,6 @@ SYMLINK_IGNORE_FILES := $(shell cat $(SYMLINKIGNORE))
 
 .DEFAULT_GOAL := install
 
-.PHONY: envchain
-envchain: homebrew
-ifeq ($(UNAME),Darwin)
-ifeq ("$(wildcard /usr/local/bin/envchain)","")
-	brew install "https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb"
-endif
-endif
-
 .PHONY: homebrew
 homebrew:
 ifeq ($(UNAME),Darwin)
@@ -37,7 +29,7 @@ ifeq ($(UNAME),Darwin)
 endif
 
 .PHONY: install
-install: submodule-init symlink homebrew homebrew-bundle envchain
+install: submodule-init symlink homebrew homebrew-bundle
 
 .PHONY: submodule-init
 submodule-init:
