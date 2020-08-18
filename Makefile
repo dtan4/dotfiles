@@ -37,7 +37,7 @@ ifeq ($(UNAME),Darwin)
 endif
 
 .PHONY: install
-install: submodule-init submodule-update symlink homebrew homebrew-bundle envchain
+install: submodule-init symlink homebrew homebrew-bundle envchain
 
 .PHONY: submodule-init
 submodule-init:
