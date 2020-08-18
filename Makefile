@@ -8,8 +8,6 @@ SYMLINK_MAC_ONLY := .tmux-Darwin.conf
 SYMLINKIGNORE := .symlinkignore
 SYMLINK_IGNORE_FILES := $(shell cat $(SYMLINKIGNORE))
 
-VIM_PLUGINS = $(shell find dein/repos -type d -depth 3 | grep -v Shougo/dein.vim)
-
 .DEFAULT_GOAL := install
 
 .PHONY: envchain
@@ -69,7 +67,7 @@ symlink:
 	done
 
 .PHONY: clean
-clean: clean-symlink clean-vimplugins
+clean: clean-symlink
 
 .PHONY: clean-symlink
 clean-symlink:
@@ -77,10 +75,4 @@ clean-symlink:
 		if [ -e $(HOME)/$$file ]; then \
 			rm -r $(HOME)/$$file; \
 		fi; \
-	done
-
-.PHONY: clean-vimplugins
-clean-vimplugins:
-	@for plugin in $(VIM_PLUGINS); do \
-		rm -rf $$plugin; \
 	done
