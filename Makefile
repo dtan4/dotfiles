@@ -9,8 +9,6 @@ ANYENV_PLUGINS := znz/anyenv-update
 
 RBENV_PLUGINS := amatsuda/gem-src sstephenson/rbenv-default-gems sstephenson/rbenv-gem-rehash rbenv/rbenv-each
 
-GOTOOLS := golang.org/x/tools/cmd/godoc
-
 DOTFILES = $(shell git ls-tree --name-only HEAD)
 
 SYMLINK_LINUX_ONLY := .conkyrc .Xresources
@@ -74,12 +72,6 @@ ifeq ("$(wildcard /usr/local/bin/envchain)","")
 	brew install "https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb"
 endif
 endif
-
-.PHONY: gotools
-gotools:
-	@for gotool in $(GOTOOLS); do \
-		go get -u -v $$gotool; \
-	done
 
 .PHONY: homebrew
 homebrew:
