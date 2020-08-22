@@ -29,7 +29,19 @@ ifeq ($(UNAME),Darwin)
 endif
 
 .PHONY: install
-install: submodule-init symlink homebrew homebrew-bundle
+install: submodule-init symlink homebrew homebrew-bundle install-nodenv install-rbenv
+
+.PHONY: install-nodenv
+install-nodenv:
+	curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash
+
+.PHONY: install-rbenv
+install-rbenv:
+ifeq ($(UNAME),Darwin)
+# https://github.com/rbenv/rbenv-installer/issues/15
+	brew install rbenv
+endif
+	curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
 
 .PHONY: submodule-init
 submodule-init:
