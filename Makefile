@@ -43,6 +43,12 @@ ifeq ($(UNAME),Darwin)
 endif
 	curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
 
+.PHONY: install-vscode-settings
+install-vscode-settings:
+ifeq ($(UNAME),Darwin)
+	ln -sf $(PWD)/vscode-settings.json "$(HOME)/Library/Application Support/Code/User/settings.json"
+endif
+
 .PHONY: install-vscode-extensions
 install-vscode-extensions:
 	@script/install-vscode-extensions
