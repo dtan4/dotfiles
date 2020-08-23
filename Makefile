@@ -43,6 +43,10 @@ ifeq ($(UNAME),Darwin)
 endif
 	curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
 
+.PHONY: install-vscode-extensions
+install-vscode-extensions:
+	@script/install-vscode-extensions
+
 .PHONY: submodule-init
 submodule-init:
 	git submodule update --init

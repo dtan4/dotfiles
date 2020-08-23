@@ -1,0 +1,24 @@
+#!/bin/bash
+
+extensions=(
+  golang.go
+  tuttieee.emacs-mcx
+)
+
+main() {
+  set -eu
+  set -o pipefail
+
+  if ! which code > /dev/null 2>&1; then
+    echo "Visual Studio Code was not found" >&2
+    return 1
+  fi
+
+  echo "Visual Studio Code was found"
+
+  for ext in "${extensions[@]}"; do
+    code --install-extension "${ext}"
+  done
+}
+
+main
