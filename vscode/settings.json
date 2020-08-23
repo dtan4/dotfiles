@@ -1,3 +1,4 @@
 {
-    "go.useLanguageServer": true
+    "go.useLanguageServer": true,
+    "files.trimTrailingWhitespace": true
 }
