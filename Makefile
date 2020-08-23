@@ -47,6 +47,7 @@ endif
 install-vscode-settings:
 ifeq ($(UNAME),Darwin)
 	ln -sf $(PWD)/vscode-settings.json "$(HOME)/Library/Application Support/Code/User/settings.json"
+	ln -sf $(PWD)/vscode/keybindings.json "$(HOME)/Library/Application Support/Code/User/keybindings.json"
 endif
 
 .PHONY: install-vscode-extensions
