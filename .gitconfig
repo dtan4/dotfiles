@@ -7,16 +7,12 @@
 	diff = true
 [alias]
 	br = branch
-	cb = rev-parse --abbrev-ref HEAD
 	co = checkout
-	gp = grep --color=auto -n
 	lg = log --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(white)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches
-	lgg = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
 	ls = ls-files
 	df = diff
 	cdf = diff --cached
 	st = status --short --branch
-	bc = !"_bc() { hub browse -- commit/$@ ;}; _bc"
 	cm = commit -m
 	cam = commit --amend -m
 	can = commit --amend --no-edit
@@ -24,8 +20,6 @@
 	fpr = fetch origin +refs/pull/*:refs/remotes/pull/*
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git checkout master && git branch --merged | grep -v \\* | xargs -I % git branch -d %
-	of = !"of() { git fetch origin $1; git branch $1 origin/$1; git checkout $1; }; of"
-	openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
 	ploc = !git pull origin $(git cb)
 	plom = !git checkout master && git pull origin master
 	puoc = !git push -u origin $(git cb)
