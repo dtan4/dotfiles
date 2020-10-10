@@ -27,7 +27,7 @@
 	pudm = !git checkout master && git push dtan4 master
 	puom = !git checkout master && git push -u origin master
 	phom = !git checkout master && git push heroku master
-	pr = !hub browse -- compare/$(git symbolic-ref --short HEAD)'?'expand=1
+	# pr = gh pr create -w
 [include]
 	path = ~/.gitconfig.local
 [help]
