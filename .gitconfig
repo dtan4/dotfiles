@@ -20,10 +20,10 @@
 	fpr = fetch origin +refs/pull/*:refs/remotes/pull/*
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git checkout master && git branch --merged | grep -v \\* | xargs -I % git branch -d %
-	ploc = !git pull origin $(git cb)
+	ploc = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 	plom = !git checkout master && git pull origin master
-	puoc = !git push -u origin $(git cb)
-	pudc = !git push dtan4 $(git cb)
+	puoc = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+	pudc = !git push dtan4 $(git rev-parse --abbrev-ref HEAD)
 	pudm = !git checkout master && git push dtan4 master
 	puom = !git checkout master && git push -u origin master
 	phom = !git checkout master && git push heroku master
