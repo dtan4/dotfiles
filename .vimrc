@@ -3,6 +3,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 set autoindent
 set number
+set ruler
 set showmode
 set expandtab
 set tabstop=2
