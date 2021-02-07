@@ -20,12 +20,12 @@
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git checkout master && git branch --merged | grep -v \\* | xargs -I % git branch -d %
 	ploc = !git pull origin $(git rev-parse --abbrev-ref HEAD)
-	plom = !git checkout master && git pull origin master
+	plom = !~/src/github.com/dtan4/dotfiles/git-scripts/git-with-default-branch.sh pull master
 	puoc = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
 	pudc = !git push dtan4 $(git rev-parse --abbrev-ref HEAD)
-	pudm = !git checkout master && git push dtan4 master
-	puom = !git checkout master && git push -u origin master
-	phom = !git checkout master && git push heroku master
+	pudm = !~/src/github.com/dtan4/dotfiles/git-scripts/git-with-default-branch.sh push dtan4
+	puom = !~/src/github.com/dtan4/dotfiles/git-scripts/git-with-default-branch.sh push origin
+	phom = !~/src/github.com/dtan4/dotfiles/git-scripts/git-with-default-branch.sh push heroku
 	# pr = gh pr create -w
 [include]
 	path = ~/.gitconfig.local
