@@ -20,7 +20,7 @@
 	ignore = !"gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	delete-merged-branches = !git checkout master && git branch --merged | grep -v \\* | xargs -I % git branch -d %
 	ploc = !git pull origin $(git rev-parse --abbrev-ref HEAD)
-	plom = !~/src/github.com/dtan4/dotfiles/git-scripts/git-with-default-branch.sh pull master
+	plom = !~/src/github.com/dtan4/dotfiles/git-scripts/git-with-default-branch.sh pull origin
 	puoc = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
 	pudc = !git push dtan4 $(git rev-parse --abbrev-ref HEAD)
 	pudm = !~/src/github.com/dtan4/dotfiles/git-scripts/git-with-default-branch.sh push dtan4

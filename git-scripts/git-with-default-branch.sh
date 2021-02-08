@@ -40,7 +40,7 @@ main() {
       git_push_db "${remote}"
       ;;
     "pull")
-      git_push_db "${remote}"
+      git_pull_db "${remote}"
       ;;
     *)
     echo "[ERROR] invalid command: ${command}" >&2
