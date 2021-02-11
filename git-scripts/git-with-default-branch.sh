@@ -1,7 +1,7 @@
 #!/bin/bash
 
 default_branch() {
-  git branch -l | grep -E "^(\* )?(main|master)$" | sed -E "s/^(\* )//"
+  git branch -l | grep -E "^\*?\s+(main|master)$" | sed -E 's/^\*?\s+//g'
 }
 
 git_push_db() {
